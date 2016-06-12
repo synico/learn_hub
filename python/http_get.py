@@ -5,7 +5,7 @@ import urllib
 params = urllib.urlencode({'@LOOKUPADDRESS':'12.9.138.11'})
 headers = {"Content-type":"application/x-www-form-urlencoded","Accept":"text/plain","User-Agent":"synico@gmail.com"}
 headers1 = {'User-Agent':'synico@gmail.com'}
-headers2 = 'Git tracks changes of files'
+headers2 = 'Git tracks changes of files without adding'
 
 conn = httplib.HTTPConnection('bot.whatismyipaddress.com')
 conn.debuglevel = 1
