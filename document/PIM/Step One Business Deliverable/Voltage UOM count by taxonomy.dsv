@@ -1,0 +1,51 @@
+"STRUCTUREGROUPNAME"|"ATTRIBUTE_UOM_CD"|"COUNT(*)"
+"Batteries"|"V"|1278
+"Capacitor Aluminum"|"V"|1
+"Capacitor Aluminum"|"Vac"|6
+"Capacitor Aluminum"|"Vdc"|50375
+"Capacitor Array"|"V"|1
+"Capacitor Array"|"Vdc"|1067
+"Capacitor Ceramic Multilayer"|"V"|679
+"Capacitor Ceramic Multilayer"|"Vac"|140
+"Capacitor Ceramic Multilayer"|"Vdc"|179677
+"Capacitor Ceramic Singlelayer"|"V"|14
+"Capacitor Ceramic Singlelayer"|"Vac"|817
+"Capacitor Ceramic Singlelayer"|"Vac|Vac"|746
+"Capacitor Ceramic Singlelayer"|"Vdc"|4728
+"Capacitor Ceramic Singlelayer"|"Vdc|Vac"|38
+"Capacitor Electric Double Layer"|"Vdc"|476
+"Capacitor Film"|"V"|1439
+"Capacitor Film"|"Vac"|3264
+"Capacitor Film"|"Vac|Vac"|3
+"Capacitor Film"|"Vdc"|8442
+"Capacitor Film"|"Vdc/Vac"|63
+"Capacitor Film"|"Vdc|VDC|VAC"|2
+"Capacitor Film"|"Vdc|Vac"|36270
+"Capacitor Misc"|"V"|8
+"Capacitor Misc"|"Vac"|6
+"Capacitor Misc"|"Vac|Vac"|5
+"Capacitor Misc"|"Vdc"|151
+"Capacitor Misc"|"Vdc|Vac"|2
+"Capacitor Niobium"|"Vdc"|242
+"Capacitor Paper"|"V"|10
+"Capacitor Paper"|"Vac"|105
+"Capacitor Paper"|"Vac|Vac"|2
+"Capacitor Paper"|"Vdc"|14
+"Capacitor Paper"|"Vdc|Vac"|130
+"Capacitor RC Network"|"V"|2
+"Capacitor RC Network"|"Vac"|6
+"Capacitor RC Network"|"Vdc"|69
+"Capacitor RC Network"|"Vdc|Vac"|50
+"Capacitor Tantalum Solid Axial"|"Vdc"|20408
+"Capacitor Tantalum Solid Radial"|"Vdc"|9424
+"Capacitor Tantalum Solid SMT"|"Vdc"|92638
+"Capacitor Tantalum Wet"|"Vdc"|5456
+"Capacitor Trimmer"|"V"|1
+"Capacitor Trimmer"|"Vdc"|318
+"Connector Audio and Video"|"Vdc"|42
+"Connector Backplane"|"Vdc"|1
+"Connector Headers and PCB Receptacles"|"Vac|Vac"|1
+"EMI Filter"|"Vdc"|4
+"Electromechanical Relay"|"Vdc"|8
+"Inductor Surface Mount"|"Vdc"|3
+"SMD Crystal Oscillator"|"Vdc"|1
