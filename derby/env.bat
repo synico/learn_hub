@@ -14,4 +14,5 @@ SET PATH=%PATH%;%JAVA_HOME%\bin;%ANT_HOME%\bin;%MAVEN_HOME%\bin;%DERBY_HOME%\bin
 REM set classpath
 SET CLASSPATH=%DERBY_HOME%\lib\derby.jar;%DERBY_HOME%\lib\derbytools.jar;
 
-REM derby net url: 'jdbc:derby://localhost:1527/D:\IBM\WCDE_ENT70\db\mall_network;user=root;password=APP;create=true';
+REM derby net url: 'jdbc:derby://localhost:1527/D:\IBM\WCDE_ENT70\db\mall_network;user=APP;password=APP;create=true';
+REM 'jdbc:derby:D:\IBM\WCDE_ENT70\db\mall_network;create=true'
