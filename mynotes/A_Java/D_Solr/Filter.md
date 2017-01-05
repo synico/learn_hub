@@ -12,19 +12,21 @@ Filter读取和输出的都是TokenStream，因此可以配置一连串连续的
 
 ####2. Edge N-Gram Filter（solr.EdgeNGramFilterFactory）
 生成指定长度范围内的edge n-gram分词。  
->参数：minGramSize，默认值1；maxGramSize，默认值1。  
+>参数：  
+>1) minGramSize，默认值1。  
+>2) maxGramSize，默认值1。  
 
-	1）minGramSize，maxGramSize使用默认值
+	1) minGramSize，maxGramSize使用默认值
 	IN: "four score and twenty"
 	Tokenizer to Filter: "four", "score", "and", "twenty"
 	OUT: "f", "s", "a", "t"
 	
-	2）minGramSize=1，maxGramSize=4
+	2) minGramSize=1，maxGramSize=4
 	IN: "four score"
 	Tokenizer to Filter: "four", "score"
 	OUT: "f", "fo", "fou", "four", "s", "sc", "sco", "scor"
 	
-	3）minGramSize=4，maxGramSize=6
+	3) minGramSize=4，maxGramSize=6
 	IN: "four score and twenty"
 	Tokenizer to Filter: "four", "score", "and", "twenty"
 	OUT: "four", "scor", "score", "and", "twen", "twent", "twenty"
@@ -39,20 +41,20 @@ Filter读取和输出的都是TokenStream，因此可以配置一连串连续的
 ####4. N-Gram Filter（solr.NGramFilterFactory）
 生成指定长度范围内的n-gram分词。  
 >参数：  
->1）minGramSize，默认值1；  
->2）maxGramSize，默认值2  
+>1) minGramSize，默认值1。  
+>2) maxGramSize，默认值2。  
 
-	1）minGramSize，maxGramSize使用默认值
+	1) minGramSize，maxGramSize使用默认值
 	IN: "four score"
 	Tokenizer to Filter: "four", "score"
 	OUT: "f", "o", "u", "fo", "ou", "ur", "s", "c", "o", "r", "e", "sc", "co", "or", "re"
 	
-	2）minGramSize=1，maxGramSize=4
+	2) minGramSize=1，maxGramSize=4
 	IN: "four score"
 	Tokenizer to Filter: "four", "score"
 	OUT: "f", "fo", "fou", "four", "s", "sc", "sco", "scor"
 	
-	3）minGramSize=3，maxGramSize=5
+	3) minGramSize=3，maxGramSize=5
 	IN: "four score"
 	Tokenizer to Filter: "four", "score"
 	OUT: "fou", "four", "our", "sco", "scor", "score", "cor", "core", "ore"
@@ -60,9 +62,9 @@ Filter读取和输出的都是TokenStream，因此可以配置一连串连续的
 ####5. Pattern Replace Filter（solr.PatternReplaceFilterFactory）
 使用正则表达式匹配每个分词，如果匹配则用替代词替换匹配词。  
 >参数：  
->1）pattern，必须指定，参照java.util.regex.Pattern；  
->2）replacement，必须指定，参照java.util.regex.Matcher；  
->3）replace，可选值"all"， "first"，默认"all"
+>1) pattern，必须指定，参照java.util.regex.Pattern。  
+>2) replacement，必须指定，参照java.util.regex.Matcher。  
+>3) replace，可选值"all"， "first"，默认"all"。
 
 ####6. Porter Stem Filter（solr.PorterStemFilterFactory）
 使用Porter Steamming算法处理英文分词，生成分词词根。当设置Snowbll Porter Stemmer参数language为English时，两者生成的分词类似。但是处理速度Porter Stem Filter比Snowball快4倍。  
@@ -76,13 +78,13 @@ Filter读取和输出的都是TokenStream，因此可以配置一连串连续的
 ####9. Shingle Filter（solr.ShingleFilterFactory）
 生成分词的n-grams（shingles），即将多个分词合并成一个分词。  
 >参数：  
->1）minShingleSize：默认值2，每个shingle包含最少分词个数。  
->2）maxShingleSize：默认值2，每个shingle能包含最多分词个数。  
->3）outputUnigrams：可选值true/false，默认为true。如果为true，表示保留原始分词在原始位置上。  
->4）outputUnigramsIfNoShingles：默认为false。  
->5）tokenSeparator：默认值“ ”。用来连接相邻分词的分隔符。  
+>1) minShingleSize：默认值2，每个shingle包含最少分词个数。  
+>2) maxShingleSize：默认值2，每个shingle能包含最多分词个数。  
+>3) outputUnigrams：可选值true/false，默认为true。如果为true，表示保留原始分词在原始位置上。  
+>4) outputUnigramsIfNoShingles：默认为false。  
+>5) tokenSeparator：默认值“ ”。用来连接相邻分词的分隔符。  
 
-	1）参数取默认值
+	1) 参数取默认值
 	IN: "To be, or what?"
 	Tokenizer to Filter: "To"(1), "be"(2), "or"(3), "what"(4)
 	OUT: "To"(1), "To be"(1), "be"(2), "be or"(2), "or"(3), "or what"(3), "what"(4)
