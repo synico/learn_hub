@@ -58,7 +58,7 @@ Doesn't store the value.
 #####Field options for term vectors
 Term vectors are a mix between an indexed fields and a stored fields. They're keyed first by document id, secondarily by term. It means they store a miniature inverted index for that one document. Unlike a stored field, where the original string content is stored verbatim, term vectors store the actual separate  terms that were produced by the analyzer, allowing you to retrieve all terms for each field, and the frequency of their occurrence with the document, sorted in lexicographic order. The tokens(terms) also have position and offset information.  
 1) TermVector.YES  
-Records the unique terms that occurred, and their counts, in each document, but doesn't store any positions or offsets information.
+Records the unique terms that occurred, and their counts, in each document, but doesn't store any positions or offsets information.  
 2) TermVector.WITH\_POSITION  
 3) TermVector.WITH\_OFFSET  
 4) TermVector.WITH\_POSITION\_OFFSET  
