@@ -6,9 +6,9 @@ A document is Lucene's atomic unit of indexing and searching. It's a container t
 
 #####Field
 Each field has a name to identify it, a text or binary value, and a series of detailed options that describe what Lucence should do with the field's value when you add the document to the index.
-At a high level, there are three things lucene can do with each field:
-1) The value may be indexed or not. A field must be indexed if you intend to search on it. Only text fields may be indexed, binary valued fields may be only stored.
-2) If it's indexed, the field may also optionally store term vectors , which are collectively a miniature inverted index for that one field, allowing you to retrieve all of its tokens.
+At a high level, there are three things lucene can do with each field:  
+1) The value may be indexed or not. A field must be indexed if you intend to search on it. Only text fields may be indexed, binary valued fields may be only stored.  
+2) If it's indexed, the field may also optionally store term vectors , which are collectively a miniature inverted index for that one field, allowing you to retrieve all of its tokens.  
 3) Separately, the field value may be stored, meaning a verbatim copy of the unanalyzed value is written way in the index so that it can latter be retrieved.
 
 #####Flexible schema
@@ -90,7 +90,7 @@ Index optimization consumes substantial CPU and input/output (I/O) resources. An
 
 ####10. Other directory implementations
 Directory|Description
-:-|:-
+:--|:--
 SimpleFSDirectory|A simplistic `Directory` that stores files in the file system, using `java.io.*` APIs. It doesn't scale well with many threads.
 NIOFSDirectory|A `Directory` that stores files in the file system, using `java.nio.*` APIS. This does scale well with threads on all platforms except Microsoft Windows, due to a longstanding issue with Sun's Java Runtime Environment(JRE).
 MMapDirectory|A `Directory` that uses memory-mapped I/O to access files. This is a good choice on 64-bit JREs, or on 32-bit JREs where the size of the index is relatively small.
