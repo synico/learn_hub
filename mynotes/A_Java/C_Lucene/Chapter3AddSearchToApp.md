@@ -3,7 +3,7 @@
 ####1. Lucene's primary searching API
 
 Class|Purpose
-:-|:-
+:--|:--
 IndexSearcher|Gateway to searching an index. All searches come through an `IndexSearcher` instance using any of the several overloaded `search` methods.
 Query (and subclasses)|Concrete subclasses encapsulate logic for a particular query type. Instances of `Query` are passed to and `IndexSearcher's search` method.
 QueryParser|Processes a human-entered (and readeable) expression into a concrete `Query` object.
