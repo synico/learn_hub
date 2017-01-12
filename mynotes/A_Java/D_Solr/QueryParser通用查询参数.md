@@ -25,7 +25,7 @@ Standard, DisMax, eDisMax request query parser都支持的查询参数
 ####6. cache parameter：默认情况下，Solr会缓存所有queries和filter queries的结果。可以使用cache＝false禁止缓存query结果。
 
 ####7. debug
-1) debug=true  
-2) debug=query  
-3) debug=timing  
-4) debug=results
+1) debug=true：仅返回查询（query）的调试信息  
+2) debug=query：仅返回查询（query）的调试信息  
+3) debug=timing：返回查询处理各个阶段所耗时间的调试信息  
+4) debug=results：返回查询结果（a.k.a explain）相关的调试信息
