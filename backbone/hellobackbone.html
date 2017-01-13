@@ -39,32 +39,40 @@
   var test = function() {
     var flag = true;
     var flag1 = "xxx";
-    if(typeof flag2) {
+    if(typeof flag2 == 'undefined') {
       console.log("value of flag1 is true");
     } else {
       console.log("value of flag1 is false");
     }
     var n = 17;
-    console.log(typeof flag2);
+    //console.log(n.toString(2));
 
     var a1 = ['a', 'b', 'c', 'd'];
-    console.log(a1);
-    newA1 = new Array();
-    function add_to_a1(a1, x) {
-      console.log(a1.valueOf());
+    var a2 = [1, 2, 3, 4];
+    console.log("value of a1 before pass to add_to_a1(): " + a1);
 
+    function add_to_a1(a1, x, n) {
+      var newA1 = new Array();
       newA1[0] = a1[0] + x;
       newA1[1] = a1[1] + x;
       newA1[2] = a1[2] + x;
       a1[0] = '0a';
       a1 = newA1;
+      n = n + 1;
       console.log("in func add_to_a1: " + a1);
+
+      a2 = newA1;
+
+      var str1 = "string 1";
+      var str2 = str1;
+      str1 = "update string 1";
+      console.log("value of str1: " + str1 + ", value of str2: " + str2);
     }
-    add_to_a1(a1, 3);
-    console.log("after invoke add_to_a1：" + a1);
-    for(var idxA in a1) {
+    add_to_a1(a1, 3, n);
+    console.log(n + "after invoke add_to_a1：" + a1);
+    /*for(var idxA in a1) {
       console.log("a1[" + idxA + "] :" + a1[idxA]);
-    }
+    }*/
   }
   test();
   </script>
