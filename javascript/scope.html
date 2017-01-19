@@ -15,6 +15,55 @@ function bar() {
 }
 
 bar();
+
+//----------------------------Functions
+//----The Method Invocation Pattern
+var add = function (a, b) {
+	return a + b;
+};
+
+var myObject = {
+	value: 0,
+	increment: function (inc) {
+		this.value += typeof inc === 'number' ? inc : 1;
+	}
+};
+
+myObject.increment();
+console.log("myObject.value: " + myObject.value);
+myObject.increment(2);
+console.log("myObject.value: " + myObject.value);
+
+//----The Function Invocation Pattern
+myObject.double = function () {
+	var that = this;
+	var helper = function () {
+		//myObject.value = add(myObject.value, myObject.value);
+		that.value = add(that.value, that.value);
+	};
+	
+	//helper.apply(myObject, [myObject.value, myObject.value]);
+	helper();
+};
+
+myObject.double();
+console.log("myObject.value: " + myObject.value);
+
+var hisObject = (function () {
+	var value = 0;
+	
+	return {
+		increment: function (inc) {
+			value += typeof inc === 'number' ? inc : 1;
+		},
+		getValue: function() {
+			return value;
+		}
+	};
+} ()); 
+
+hisObject.increment();
+console.log("hisObject: " + hisObject);
 </script>
 </head>
 
