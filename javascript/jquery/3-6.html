@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
+"http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>获取或设置元素的值</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+  </script>
+  <style type="text/css">
+    body{font-size: 12px;text-align: center}
+    div{padding: 3px;margin: 3px;width: 120px;float: left}
+    .txt{border: #666 1px solid;padding: 3px}
+  </style>
+  <script type="text/javascript">
+    $(function() {
+      $("select").change(function() {
+        var strSel = $("select").val().join(",");
+        $("#p1").html(strSel);
+      })
+      $("input").change(function() {
+        var strTxt = $("input").val();
+        $("#p2").html(strTxt);
+      })
+      $("input").change(function() {
+        $("input").val("");
+      })
+    })
+  </script>
+  <script type="text/javascript">
+    //option1
+    $(document).ready(function() {
+      console.log("$(document).ready()");
+    })
+    //option2
+    $(function() {
+      $("input").val("$(funciton())");
+      console.log("$(funciton())");
+    })
+    //option3
+    jQuery(function() {
+      jQuery("input").val("jQuery(function())");
+      console.log("jQuery(function())");
+    })
+    //option4
+    jQuery(function($) {
+      $("input").val("jQuery(function($))");
+      console.log("jQuery(function($))");
+    })
+  </script>
+</head>
+<body>
+  <div>
+    <select multiple="multiple"
+      style="height: 96px;width: 85px">
+      <option value="1">Item 1</option>
+      <option value="2">Item 2</option>
+      <option value="3">Item 3</option>
+      <option value="4">Item 4</option>
+      <option value="5">Item 5</option>
+      <option value="6">Item 6</option>
+    </select>
+    <p id="p1"></p>
+  </div>
+  <div>
+    <input type="text" class="txt"/>
+    <p id="p2"></p>
+  </div>
+</body>
+</html>
