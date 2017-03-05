@@ -1,0 +1,27 @@
+<html>
+<head>
+<script language="javascript">
+function ImmutableRectangle(w, h) {
+	this.getWidth = function() { return w; }
+	this.getHeight = function() { return h; }
+}
+
+ImmutableRectangle.prototype.area = function() {
+	return this.getWidth() * this.getHeight();
+}
+
+ImmutableRectangle.prototype.toString = function() {
+	return "ImmutableRectangle: width= " + this.getWidth() + ", height= " + this.getHeight();  
+}
+
+ImmutableRectangle.prototype.valueOf = function() {
+	return this.getWidth() * this.getHeight();
+}
+
+var imRect = new ImmutableRectangle(2, 3);
+console.log("Area of imRect: " + (typeof imRect));
+</script>
+</head>
+<body>
+</body>
+</html>
