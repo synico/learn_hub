@@ -4,7 +4,10 @@ if (!com.davidflanagan) com.davidflanagan = {};
 com.davidflanagan.Class = {};
 
 (function() {
-    function define(data) { counter++; }
+    function define(data) {
+        counter++;
+        console.log("value of counter: " + counter);
+    }
     function provides(o, c) {}
 
     var counter = 0;
