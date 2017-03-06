@@ -1,0 +1,78 @@
+<html>
+<head>
+<script language="javascript">
+uniqueId = function() {
+	if (!arguments.callee.id) arguments.callee.id = 0;
+	return arguments.callee.id++;
+}
+
+console.log("uniqueId: " + uniqueId());
+uniqueId.id = 0;
+console.log("uniqueId: " + uniqueId());
+
+uniqueId1 = (function() {
+	var id = 0;
+	return function() { return id++; }
+})();
+
+function displayKV(obj) {
+	console.log("object: " + (obj.constructor == Function));
+	console.log("=====start displaying key and value pairs=====");
+	for(var name in obj) {
+		console.log("name: " + name + ", value: " + obj[name]);
+	}
+	console.log("=====end displaying key and value pairs=====");
+}
+console.log("uniqueId1: " + uniqueId1());
+displayKV(uniqueId1);
+console.log("uniqueId1: " + uniqueId1());
+
+
+/** closure **/
+//var inspector1 = functions($) { return eval($);}
+var f = function(x) {return x*x;}
+
+function inspect(inspector, title) {
+	var expression, result;
+	
+	if("ignore" in arguments.callee) return;
+	
+	while(true) {
+		var message = "";
+		if (title) message = title + "\n";
+		
+		if (expression) message += "\n" + expression + " ==> " + result + "\n";
+		else expression = "";
+		
+		message += "Enter an expression to evaluate:";
+		
+		expression = prompt(message, expression);
+		
+		if(!expression) return;
+		
+		result = inspector(expression);
+	}
+}
+
+function factorial(n) {
+	var inspector = function($) { return eval($); }
+	inspect(inspector, "Entering factorial()");
+	var result = 1;
+	while(n > 1) {
+		result = result * n;
+		n--;
+		console.log("n: " + n);
+		inspect(inspector, "factorial() loop");
+	}
+	
+	inspect(inspector, "Exiting factorial()");
+	//return result;
+}
+
+factorial(1);
+
+</script>
+</head>
+<body>
+</body>
+</html>

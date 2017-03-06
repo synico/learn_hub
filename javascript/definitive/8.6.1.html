@@ -1,0 +1,31 @@
+<html>
+<head>
+<script language="javascript">
+check.counter = 0;
+
+function check(args) {
+	check.counter++;
+	var actual = args.length;
+	var expected = args.callee.length;
+	if (actual != expected) {
+		throw new Error("Wrong number of arguments: expected: " + expected + "; actually passed " + actual);
+	}
+}
+
+function f(x, y, z) {
+	check(arguments);
+	console.log("value of counter: " + check.counter);
+	return x + y +z;
+}
+
+/*for(var i=0; i < 5; i++) {
+	f(1, 2, 3);
+}*/
+var a = {};
+var rst = f.call(a, 1, 2, 3);
+console.log("result of f(1, 2, 3): " + rst);
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<script language="javascript">
+function Rectangle(w, h) {
+	this.width = w;
+	this.height = h;
+	//return "1";
+}
+
+Rectangle.prototype.area = function() { return this.width * this.height; }
+
+Rectangle.UNIT = new Rectangle(1, 1);
+
+var rect1 = new Rectangle(2, 4);
+console.log("rect1 instanceof Rectangle: " + (rect1 instanceof Rectangle));
+console.log("rect1: " + (rect1.constructor == Rectangle));
+var typeofRect1 = (typeof rect1);
+console.log("typeof rect1: " + typeofRect1);
+console.log("rect1.toString(): " + rect1);
+</script>
+</head>
+<body></body>
+</html>
