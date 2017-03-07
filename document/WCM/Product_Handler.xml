@@ -1,0 +1,15 @@
+[Plugin:ifEmpty value="[Plugin:RenderParam type='public' key='sources']"]
+	[Plugin:ifNotEmpty value="[Plugin:RenderParam type='public' key='sorting']"]
+		http://[Component name="websphere commerce/config_sharedvalues/wscommercehostname"][Component name="websphere commerce/config_sharedvalues/search port"]/search/resources/store/[Component name="websphere commerce/config_sharedvalues/storeid"][Plugin:RenderParam type="public" key="sorting"]&currency=[Plugin:WPCGetUserData cookieName="wpcPreferredCurrency"]
+	[/Plugin:ifNotEmpty]
+[/Plugin:ifEmpty]
+
+[Plugin:ifNotEmpty value="[Plugin:RenderParam type='public' key='sources']"]
+	[Plugin:ifEmpty value="[Plugin:RenderParam type='public' key='sorting']"]
+        	http://[Component name="websphere commerce/config_sharedvalues/wscommercehostname"][Component name="websphere commerce/config_sharedvalues/search port"]/search/resources/store/[Component name="websphere commerce/config_sharedvalues/storeid"]/productview/byCategory/[Plugin:RenderParam type="public" key="sources"]?responseFormat=xml&searchSource=E&currency=[Plugin:WPCGetUserData cookieName="wpcPreferredCurrency"]
+	[/Plugin:ifEmpty]
+
+	[Plugin:ifNotEmpty value="[Plugin:RenderParam type='public' key='sorting']"]
+		http://[Component name="websphere commerce/config_sharedvalues/wscommercehostname"][Component name="websphere commerce/config_sharedvalues/search port"]/search/resources/store/[Component name="websphere commerce/config_sharedvalues/storeid"][Plugin:RenderParam type="public" key="sorting"]&searchSource=E&currency=[Plugin:WPCGetUserData cookieName="wpcPreferredCurrency"]
+	[/Plugin:ifNotEmpty]
+[/Plugin:ifNotEmpty]
