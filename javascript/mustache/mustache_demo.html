@@ -1,0 +1,23 @@
+<html>
+<head>
+  <!--<script type="text/javascript" src="E:\scm\git\jquery\jquery.js" /> -->
+  <script type="text/javascript" src="E:\\scm\\git\\mustache\\mustache.min.js" />
+</head>
+<body onload="loadUser()">
+
+  <div id="target">Loading...</div>
+  <script id="template" type="x-tmpl-mustache">
+    Hello {{ name }}!
+  </script>
+</body>
+</html>
+
+<script type="text/javascript">
+  function loadUser() {
+    var template = $('#template').html();
+    Mustache.parse(template);
+    console.log(template)
+    var render = Mustache.render(template, {name: "Luke"});
+    $('#target').html(rendered);
+  }
+</script>
