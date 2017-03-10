@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello Dojo</title>
+<script src="file:///E:/scm/git/dojo/dojo.js" data-dojo-config="async:true"></script>
+</head>
+<body>
+
+<h1 id="greeting">Hello</h1>
+
+<script>
+	require([
+		"app/counter"
+	], function (cs) {
+		console.log(cs.getValue());
+		cs.increment();
+		console.log(cs.getValue());
+	});
+</script>
+</body>
+</html>
