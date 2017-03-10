@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Hello Dojo</title>
-<script src="file:///E:/scm/git/dojo/dojo.js" data-dojo-config="async:true"></script>
+<!-- <script src="file:///E:/scm/git/dojo/dojo.js" data-dojo-config="async:true"></script> -->
 </head>
 <body>
 
+	<li>one</li>
+	<li>two</li>
+	<li>three</li>
+	<li>four</li>
+
 <h1 id="greeting">Hello</h1>
 
-<script>
+<!-- <script>
 	require([
 		"app/counter"
 	], function (cs) {
@@ -17,6 +22,47 @@
 		cs.increment();
 		console.log(cs.getValue());
 	});
+</script>-->
+<script type="text/javascript">
+(function(){
+	console.log("option1");
+}());
+
+(function(){
+	console.log("general");
+})();
+
+!function(){
+	console.log("!");
+}();
+
+~function(){
+	console.log("~");
+}();
+
+void function(){
+	console.log("void");
+}();
+
+var lists = document.getElementsByTagName("li");
+for(var i=0; i<lists.length; i++){
+	/*
+	lists[i].onmouseover = function() {
+		console.log("li: " + i);
+	}
+	*/
+	/*option1
+	(function(index){
+		lists[i].onmouseover=function(){
+			console.log(index);
+		}
+	})(i);
+	*/
+	lists[i].$$index=i;
+	lists[i].onmouseover=function(){
+		console.log(this.$$index);
+	}
+}
 </script>
 </body>
 </html>
