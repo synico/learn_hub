@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello Dojo Store</title>
+<script src="file:///E:/scm/git/dojo/dojo.js" data-dojo-config="async:true"></script>
+</head>
+<body>
+</body>
+<script src="text/javascript">
+define(["../_base/declare", "dojo/store/util/SimpleQueryEngine"],
+  function(declare, SimpleQueryEngine) {
+
+    declare("dojo.store.Memory", null, {
+      constructor: function(options){},
+      data: null,
+      index: null,
+      queryEngine: SimpleQueryEngine,
+      idProperty: "id",
+      get: function(id){},
+    })
+  }
+);
+</script>
+</html>
