@@ -1,12 +1,12 @@
-#关键字final
+# 关键字final
 
-####final类
+#### final类
 表示类不可以被继承，final类中的方法隐式的都是final方法不能被overwrite，final中的成员变量可以根据需要设为final的变量。
 
-####final方法
+#### final方法
 表示方法不可以被overwrite。private方法被隐式的指定为final方法。
 
-####final变量
+#### final变量
 final变量定义的时候可以仅声明，后赋值，但是一定会在使用前初始化（final空白）。第一次赋值后，final变量不允许再赋值（编译器即可检测出）。当final变量是基本类型或者String类型时，如果在编译器知道变量的确切值，则编译器会把它当做编译器常量使用。既用到该final变量的地方，相当于直接访问的是个常量。
 
 1. final静态变量（static final）：表示常量。
