@@ -1,6 +1,6 @@
-#input标签
+# input标签
 
-####disabled和readonly的区别
+#### disabled和readonly的区别
 1. disabled  
 1) 被disabled的input元素，无法获取焦点。  
 2) 提交disabled的input元素时，input元素的值不会被提交。  

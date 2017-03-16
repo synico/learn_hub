@@ -1,4 +1,4 @@
-#ContextLoaderListener加载顺序
+# ContextLoaderListener加载顺序
 
 1. 首先创建ApplicationContext实例，如果ContextLoader通过加载xml配置文件，则先创建XmlWebApplicationContext实例。
 

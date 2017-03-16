@@ -1,6 +1,6 @@
-#DispatcherServlet
+# DispatcherServlet
 
-####加载顺序
+#### 加载顺序
 
 1. 在创建DispatcherServlet的WebApplicationContext之前，先查找root context（通过ContextLoader加载）并将其设置为DispatcherServlet的WebApplicationContext的parent context。
 
@@ -17,7 +17,7 @@
 8) viewResolvers  
 9) flashMapManager  
 
-####处理request顺序
+#### 处理request顺序
 
 1. 查找WebApplicationContext（servletContext中属性名为DispatcherServlet.WEB\_APPLICATION\_CONTEXT\_ATTRIBUTE）,并将其绑定到request上。
 

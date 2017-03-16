@@ -1,6 +1,6 @@
-#Chapter3 Adding search to your app
+# Chapter3 Adding search to your app
 
-####1. Lucene's primary searching API
+#### 1. Lucene's primary searching API
 
 Class|Purpose
 :--|:--
@@ -10,8 +10,8 @@ QueryParser|Processes a human-entered (and readeable) expression into a concrete
 TopDocs|Holds the top scoring documents, returned by `IndexSearcher.search`.
 ScoreDoc|Provides access to each search result in `TopDocs`.
 
-####2. Using IndexSearcher
-#####Create an IndexSearcher  
+#### 2. Using IndexSearcher
+##### Create an IndexSearcher  
 IndexReader does all the heavy lifting to open all index files and expose a low-level reader API, while IndexSeacher is a rather thin veneer.  
 There are two approaches to create an IndexSearcher, one is to create the IndexSearcher from a directory, another is to create IndexSearcher from a IndexReader.  
 

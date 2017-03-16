@@ -1,4 +1,4 @@
-#Web Service之WSDL描述
+# Web Service之WSDL描述
 
 1. Types：数据类型定义的容器。
 2. Messages：通信消息数据结构的抽象类型化定义。使用Types所定义的类型来定义整个消息的数据结构。
