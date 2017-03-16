@@ -39,3 +39,9 @@
 2. 方法区中类静态属性引用的对象
 3. 方法区中常量引用的对象
 4. 本地方法栈中JNI（即Native方法）引用的对象
+
+#### 引用
+1. 强引用（StrongReference）  
+2. 软引用（SoftReference）  
+3. 弱引用（WeakReference）  
+4. 虚引用（PhantomReference）
