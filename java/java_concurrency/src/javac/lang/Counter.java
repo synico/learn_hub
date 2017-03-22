@@ -50,6 +50,20 @@ public class Counter {
 		log(Integer.toString(counter1));
 	}
 	
+	//To illustrate 'All actions in a thread happen-before any other thread successfully returns from a join on that thread. '
+	public void invokeCounter4() {
+		if("A".equals(Thread.currentThread().getName())) {
+			try {
+				Thread.currentThread().join(5000L);
+			} catch(Exception ex) {
+			} finally {
+				
+			}
+		}
+		counter1 += 1;
+		log(Integer.toString(counter1));
+	}
+	
 	public static void log(String counter) {
 		System.out.println(Thread.currentThread().getName() + " is running, value of counter is : " + counter + " ========= " + System.currentTimeMillis());
 	}

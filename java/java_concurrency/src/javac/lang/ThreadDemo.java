@@ -14,7 +14,7 @@ public class ThreadDemo extends Thread {
 		if("A".equals(Thread.currentThread().getName())) {
 			try {
 //				Thread.currentThread().interrupt();
-//				join(10L);
+//				join(10000L);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -23,7 +23,7 @@ public class ThreadDemo extends Thread {
 		}
 		System.out.println("State of current thread: " + Thread.currentThread().getName() + " | " + Thread.currentThread().getState().toString());
 		for (int i=0; i < 20; i++) {
-			this.counter.invokeCounter1();
+			this.counter.invokeCounter4();
 		}
 	}
 	
