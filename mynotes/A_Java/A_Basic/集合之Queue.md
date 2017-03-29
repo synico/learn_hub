@@ -11,3 +11,17 @@
 **元素类型**：不允许添加null到队列中，否则抛出NPE。  
 1. 元素按任意顺序插入，但总是按照排序的顺序检索。
 2. 既可以保存实现了Comparable接口的对象，也可以保存利用构造器提供Comparator的对象。
+
+#### ArrayBlockingQueue
+
+#### ConcurrentLinkedQueue
+
+#### DelayQueue
+
+#### LinkedBlockingQueue
+
+#### LinkedBlockingDeque
+
+#### PriorityBlockingQueue
+
+#### SynchronousQueue

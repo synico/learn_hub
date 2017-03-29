@@ -33,3 +33,8 @@ Remove：调用remove方法移除链表中元素，仅需遍历链表找到要�
 2. 避免使用以整数索引表示链表中位置的所有方法。如果需要对列表进行随机访问，就使用数组或ArrayList，而不要使用LinkedList。
 3. 可以将任意类型的数据加入到列表，包括null和基本类型。
 4. 使用Iterator遍历List同时要remove/add修改List时，需要用Iterator的remove/add方法，而不是List的reomve/add方法。如果使用List的remove/add方法会导致ConcurrentModificationException。
+
+#### CopyOnWriteArrayList
+List的同步版本，通过每次写入（包括add，set和remove操作）时复制对象数组（存储数据结构）实现非阻塞的线程安全。迭代器仅保证弱一致性。
+1. 在需要线程安全时，遍历读取操作的数量大大超过写操作数量时，这种非阻塞的线程安全实现可能比其他方案更有效。
+2. 不支持在其迭代器上对元素进行更改操作（remove, set和add），否则跑出UnsupportedOperationException。

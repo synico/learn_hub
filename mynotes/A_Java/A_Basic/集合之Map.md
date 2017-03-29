@@ -8,14 +8,19 @@
 
 #### WeakHashMap
 只有当值（value）的生命周期是由该键（key）的外部引用而不是由值决定时，WeakHashMap才有用处。
-
 1. 如果有一个值，对应的键已经不再使用。因为GC只跟踪活动的对象，只要Map是活动的，其中所有的桶也是活动的，那么它们就不能被回收。这种情况下使用WeakHashMap来完成回收。
 2. 使用弱引用（weak reference）保存键。WeakReference对象将引用保存到另外一个对象（散列表键）中。对于这种类型的对象，GC使用一种特有的方式进行处理。
 
 #### TreeMap
+基于红黑树的可排序Map实现。
 
 #### LinkedHashMap
+与HashMap的区别在于，它维护着一个运行于所有元素的双向链表，用来保存元素将键插入到Map的顺序。可通过迭代器按插入顺序遍历元素。
 
 #### IdentityHashMap
 1. 键的hashcode不是由元素的hashcode函数计算，而是由System.identityHashCode方法计算。这是Object.hashCode方法根据对象的内存地址来计算散列码时所用的方式。
 2. 在两个对象比较时，IdentityHashMap使用==，而不是equals。
+
+#### ConcurrentHashMap
+
+#### ConcurrentSkipListMap
