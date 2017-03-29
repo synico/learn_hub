@@ -1,0 +1,9 @@
+[user]
+	email = synico@gmail.com
+	name = synico
+[credential]
+	helper = store
+[push]
+	default = simple
+[core]
+	quotepath = false
