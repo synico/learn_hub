@@ -35,6 +35,6 @@ Remove：调用remove方法移除链表中元素，仅需遍历链表找到要�
 4. 使用Iterator遍历List同时要remove/add修改List时，需要用Iterator的remove/add方法，而不是List的reomve/add方法。如果使用List的remove/add方法会导致ConcurrentModificationException。
 
 #### CopyOnWriteArrayList
-List的同步版本，通过每次写入（包括add，set和remove操作）时复制对象数组（存储数据结构）实现非阻塞的线程安全。迭代器仅保证弱一致性。
+List的同步版本，通过每次写入（包括add，set和remove操作）时复制对象数组（存储数据结构）实现非阻塞的线程安全。简单说只要正确发布一个事实不变的对象，那么在访问该对象时就不需要进一步同步。而在每次修改List时，都创建并重新发布一个新的容器副本，从而实现写时可变性。迭代器仅保证弱一致性。
 1. 在需要线程安全时，遍历读取操作的数量大大超过写操作数量时，这种非阻塞的线程安全实现可能比其他方案更有效。
 2. 不支持在其迭代器上对元素进行更改操作（remove, set和add），否则跑出UnsupportedOperationException。
