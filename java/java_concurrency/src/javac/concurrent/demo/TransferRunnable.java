@@ -22,7 +22,7 @@ public class TransferRunnable implements Runnable {
 				bank.transfer(fromAccount, toAccount, amount);
 				Thread.sleep((long) (DELAY * Math.random()));
 			}
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			
 		}
 	}
