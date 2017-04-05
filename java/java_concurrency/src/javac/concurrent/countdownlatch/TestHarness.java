@@ -1,6 +1,7 @@
 package javac.concurrent.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 public class TestHarness {
 	
@@ -13,12 +14,12 @@ public class TestHarness {
 		for(int i = 0; i < nThreads; i++) {
 			Thread t = new Thread(Integer.toString(i)) {
 				public void run() {
-					synchronized(obj) {
+//					synchronized(obj) {
 						try{
 							System.out.println("Thread Name: " + this.getName() + " will invoke startGate.await()");
 							startGate.await();
 							try{
-								System.out.println("Thread Name: " + this.getName() + " wil run");
+								System.out.println("Thread Name: " + this.getName() + " will run");
 								task.run();
 							} finally {
 								endGate.countDown();
@@ -28,20 +29,20 @@ public class TestHarness {
 							
 						}
 					}
-				}
+//				}
 			};
 			t.start();
 		}
 		
 		long start = System.currentTimeMillis();
-		System.out.println("will invoke startGate.countDown()");
+		System.out.println("WILL INVOKE startGate.countDown()");
+//		Thread.sleep(5000L);
 		startGate.countDown();
-		System.out.println("will invoke endGate.await()");
+		System.out.println("WILL INVOKE endGate.await()");
 		endGate.await();
 		long end = System.currentTimeMillis();
 		
-		
-		return end - start;		
+		return end - start;	
 	}
 	
 	public static void main(String args[]) {
@@ -50,6 +51,7 @@ public class TestHarness {
 			public void run() {
 				try {
 					sleep(0L);
+					System.out.println("x: " + System.currentTimeMillis());
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
