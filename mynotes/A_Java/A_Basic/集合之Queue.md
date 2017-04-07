@@ -12,9 +12,13 @@
 1. 元素按任意顺序插入，但总是按照排序的顺序检索。
 2. 既可以保存实现了Comparable接口的对象，也可以保存利用构造器提供Comparator的对象。
 
-#### ArrayBlockingQueue
-
 #### ConcurrentLinkedQueue
+基于链接节点的线程安全但无阻塞的无限队列，按照先进先出FIFO对元素进行排序。入列时，元素插入到队列的尾部；出列时，从队列的头部获取元素。
+1. 其迭代器仅提供弱一致性，仅反映某一时刻或迭代器创建时队列的状态。
+2. size方法时间复杂度为O(n)，而不像一般的容器为O(1)。并且结果也不一定准确。
+3. 所有批处理操作如addAll方法，equals方法和toArray方法都不保证原子性。
+
+#### ArrayBlockingQueue
 
 #### DelayQueue
 
