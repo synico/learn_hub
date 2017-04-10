@@ -5,6 +5,7 @@
 2. 如果HashMap太满（当前load factor大于预设值），就需要对HashMap执行rehash操作。rehash的过程是创建一个新的HashMap，并将原Map中所有元素添加到新Map中，然后丢弃原Map。
 3. Map中键值K是唯一的，如果对同一个键值两次调用put方法，第二个加入的值V会覆盖第一个值。
 4. 要同时查看键与值，可以通过枚举各个条目（Map.Entry）查看，避免对值进行查找。
+5. JDK8中HashMap被重新实现根据TREEIFY_THRESHOLD计算桶的数量，一旦当前桶的数量超过阀值，则HashMap的数据将会从链表数组转化为树。
 
 #### WeakHashMap
 只有当值（value）的生命周期是由该键（key）的外部引用而不是由值决定时，WeakHashMap才有用处。
