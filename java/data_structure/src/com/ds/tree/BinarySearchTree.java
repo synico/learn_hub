@@ -127,7 +127,24 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
 	}
 	
 	private BinaryNode<T> remove(T x, BinaryNode<T> t) {
-		return null;
+		if(t == null) {
+			return t;
+		}
+		
+		int compareResult = x.compareTo(t.element);
+		
+		if(compareResult < 0) {
+			t.left = remove(x, t.left);
+		} else if(compareResult > 0) {
+			t.right = remove(x, t.right);
+		} else if(t.left != null && t.right != null) {
+			t.element = findMin(t.right).element;
+			t.right = remove(t.element, t.right);
+		} else {
+			t = (t.left != null) ? t.left : t.right;
+		}
+		
+		return t;
 	}
 	
 	private void printTree(BinaryNode<T> t) {

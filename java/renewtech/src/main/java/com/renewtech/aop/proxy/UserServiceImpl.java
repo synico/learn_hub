@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 		log.info("enter method UserServiceImpl.testProtectedMethod");
 	}
 	
-	void testDefaultMethod() {
+	public void testDefaultMethod() {
 		log.info("enter method UserServiceImpl.testDefaultMethod");
 	}
 
