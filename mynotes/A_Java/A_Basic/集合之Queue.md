@@ -20,7 +20,7 @@
 4. 通过sun.misc.Unsafe的Unsafe机制实现无阻塞的线程安全。
 
 #### BlockingQueue方法
-|抛出异常|特殊值|阻塞|超时
+操作|抛出异常|特殊值|阻塞|超时
 :--|:--|:--|:--|:--
 插入|add(e)|offer(e)|put(e)|offer(e, time, unit)
 移除|remove()|poll()|take()|poll(time, unit)
