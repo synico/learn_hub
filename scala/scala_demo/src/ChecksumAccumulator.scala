@@ -4,7 +4,7 @@ object ChecksumAccumulator {
   
   private val cache = Map[String, Int]()
   
-  def calculate(s: String): Int = 
+  def calculate(s: String): Int = {
     if (cache.contains(s)) {
       cache(s)
     } else {
@@ -15,21 +15,20 @@ object ChecksumAccumulator {
        cache += (s -> cs)
        cs
     }
+  }
   
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val rst = ChecksumAccumulator.calculate("sss");
     Console.println(rst)
     val csa = new ChecksumAccumulator
-    Console.println(csa.calculate("good"));
+    Console.println(csa.calculate("good"))
   }
   
 }
 
 class ChecksumAccumulator {
   private var sum = 0
-  def add(b: Byte) { sum += b }
+  private def add(b: Byte) { sum += b }
   def checksum(): Int = ~(sum &0xFF) + 1
-  
-  def calculate(s: String): Int = 
-    ChecksumAccumulator.calculate(s)
+  def calculate(s: String): Int = ChecksumAccumulator.calculate(s)
 }
