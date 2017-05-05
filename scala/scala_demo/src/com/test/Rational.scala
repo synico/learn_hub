@@ -1,16 +1,22 @@
-package com.test
+package com
+package test
 
 class Rational (n: Int, d: Int) {
-  println("Created " + n + "/" + d);
+  println("--------Created " + n + "/" + d);
   
   require(d != 0)
   
-  val number: Int = n
-  val denom: Int = d
+  private val g = gcd(n.abs, d.abs)
+  val number: Int = n / g
+  val denom: Int = d / g
   
   def this(n: Int) = {
     this(n, 1)
-    println("another constructor");
+    println("--------another constructor");
+  }
+  
+  def this() = {
+    this(3)
   }
   
   override def toString = n + "/" + d
@@ -21,15 +27,24 @@ class Rational (n: Int, d: Int) {
         denom * that.denom
         )
   
-  def + (i: Int): Rational =
-    new Rational(number + i * denom, denom)
+  // A method to calculate greatest common divisor
+  def gcd(a: Int, b: Int): Int = {
+    if (b == 0)
+      a
+    else
+      gcd(b, a % b)
+  }
   
-  println("End")
+  def + (that: Rational): Rational =
+    new Rational(number * that.denom + that.number * denom, denom * that.denom)
   
+  println("--------End")
 }
 
-object test {
+object TestRational {
   def main(args: Array[String]) {
-    new Rational(4);
+    val rational = new Rational(66, 42);
+    val oneHalf = new Rational(1, 1)
+    println("result: " + (rational + oneHalf))
   }
 }
