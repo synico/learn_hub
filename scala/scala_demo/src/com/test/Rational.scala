@@ -38,13 +38,19 @@ class Rational (n: Int, d: Int) {
   def + (that: Rational): Rational =
     new Rational(number * that.denom + that.number * denom, denom * that.denom)
   
+  def * (that: Rational): Rational = 
+    new Rational(number * that.number, denom * that.denom)
   println("--------End")
 }
 
+
 object TestRational {
+  
+  implicit def int2Rational(x: Int) = new Rational(x);
+  
   def main(args: Array[String]) {
     val rational = new Rational(66, 42);
     val oneHalf = new Rational(1, 1)
-    println("result: " + (rational + oneHalf))
+    println("result: " + 2*rational)
   }
 }

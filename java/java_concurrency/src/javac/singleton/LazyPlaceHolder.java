@@ -8,7 +8,9 @@ package javac.singleton;
 public class LazyPlaceHolder {
 	
 	static class Resource {
-		
+		static {
+			System.out.println("init resource");
+		}
 	}
 	
 	private static class ResouceHolder{
@@ -16,7 +18,7 @@ public class LazyPlaceHolder {
 	}
 	
 	public static Resource getResource() {
-		return LazyPlaceHolder.ResouceHolder.resource;
+		return ResouceHolder.resource;
 	}
 	
 	public static void main(String ...args) {
