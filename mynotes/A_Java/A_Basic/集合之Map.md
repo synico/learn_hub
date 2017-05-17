@@ -5,7 +5,8 @@
 2. 如果HashMap太满（当前load factor大于预设值），就需要对HashMap执行rehash操作。rehash的过程是创建一个新的HashMap，并将原Map中所有元素添加到新Map中，然后丢弃原Map。
 3. Map中键值K是唯一的，如果对同一个键值两次调用put方法，第二个加入的值V会覆盖第一个值。
 4. 要同时查看键与值，可以通过枚举各个条目（Map.Entry）查看，避免对值进行查找。
-5. JDK8中HashMap被重新实现根据TREEIFY_THRESHOLD计算桶的数量，一旦当前桶的数量超过阀值，则HashMap的数据将会从链表数组转化为树。即rehash时采用了不同与以往的方式进行rehash。
+5. JDK8中HashMap被重新实现。以数组，链表或红黑树作为存储数据结构。如链表长度超过TREEIFY_THRESHOLD的值，则HashMap的数据将会从链表数组转化为树。即rehash时采用了不同与以往的方式进行rehash。
+6. 获取HashMap的大小不需要遍历Map。
 
 #### WeakHashMap
 只有当值（value）的生命周期是由该键（key）的外部引用而不是由值决定时，WeakHashMap才有用处。
@@ -16,7 +17,8 @@
 基于红黑树的可排序Map实现。
 
 #### LinkedHashMap
-与HashMap的区别在于，它维护着一个运行于所有元素的双向链表，用来保存元素将键插入到Map的顺序。可通过迭代器按插入顺序遍历元素。
+1. HashMap的子类。
+2. 与HashMap的区别在于，它维护着一个运行于所有元素的双向链表，用来保存元素将键插入到Map的顺序。可通过迭代器按插入顺序遍历元素。
 
 #### IdentityHashMap
 1. 键的hashcode不是由元素的hashcode函数计算，而是由System.identityHashCode方法计算。这是Object.hashCode方法根据对象的内存地址来计算散列码时所用的方式。
