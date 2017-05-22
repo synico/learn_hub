@@ -1,6 +1,7 @@
 package com.ds.map;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapDemo {
 
@@ -17,6 +18,14 @@ public class HashMapDemo {
 			System.out.println((key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16));
 			hm.put(key, key);
 		}
+		
+		System.out.println("start to loop HashMap(hm)----------------");
+		for(Map.Entry<String, String> entry : hm.entrySet()) {
+			System.out.println(entry.getKey());
+		}
+		System.out.println("end to loop HashMap(hm)----------------");
+		
+//		hm.entrySet().parallelStream().forEach(System.out::println);
 	}
 
 }
