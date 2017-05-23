@@ -157,23 +157,30 @@ under the License.
       <url>http://my.repository.com/repo/path</url>
     </mirror>
      -->
-    <mirror>
-        <id>central repository</id>
+     <mirror>
+        <id>central_repo</id>
         <mirrorOf>*</mirrorOf>
         <name>central</name>
 		<url>http://repo.maven.apache.org/maven2</url>
     </mirror>
     
+    <mirror>
+        <id>central_repo1</id>
+        <mirrorOf>central_repo</mirrorOf>
+        <name>central</name>
+		<url>http://repo1.maven.apache.org/maven2</url>
+    </mirror>
+    
 	<mirror>
 		 <id>jboss-public-repository-group</id>
-		 <mirrorOf>central</mirrorOf>
+		 <mirrorOf>central_repo1</mirrorOf>
 		 <name>JBoss Public Repository Group</name>
 		 <url>http://repository.jboss.org/nexus/content/groups/public</url>
 	</mirror>
 
     <mirror>
 		<id>nexus-aliyun</id>
-		<mirrorOf>central</mirrorOf>
+		<mirrorOf>jboss-public-repository-group</mirrorOf>
 		<name>Nexus aliyun</name>
 		<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 	</mirror>
@@ -215,7 +222,7 @@ under the License.
     <profile>
       <id>jdk6</id>
       <activation>
-		<activeByDefault>true</activeByDefault>
+		<activeByDefault>false</activeByDefault>
         <jdk>1.6</jdk>
       </activation>
 	  <properties>
@@ -228,7 +235,7 @@ under the License.
     <profile>
       <id>jdk7</id>
       <activation>
-		<activeByDefault>true</activeByDefault>
+		<activeByDefault>false</activeByDefault>
         <jdk>1.7</jdk>
       </activation>
 	  <properties>
