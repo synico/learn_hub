@@ -1,9 +1,15 @@
 package javac.singleton;
 
+import java.util.concurrent.CyclicBarrier;
+
 public class ClassInitSequence {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		System.out.println(Sub.taxi);
+		String s1 = new String("iByteCode");
+		System.out.println(s1);
+		CyclicBarrier barrier = new CyclicBarrier(1);
+		barrier.await();
 	}
 
 }
