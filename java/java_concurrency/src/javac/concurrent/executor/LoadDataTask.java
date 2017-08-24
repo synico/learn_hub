@@ -32,6 +32,9 @@ public class LoadDataTask implements Callable<String> {
 			end.setTimeInMillis(System.currentTimeMillis());
 			sb.append(dateformat.format(end.getTime()));
 			sb.append(" | ");
+			if(Thread.currentThread().getName().contains("3")) {
+				
+			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

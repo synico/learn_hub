@@ -17,7 +17,7 @@ public class AtomicTest {
 		atomicRace.incrementAndGet();
 	}
 	
-	public static synchronized void nonAtomicIncrease() {
+	public static void nonAtomicIncrease() {
 		intRace = intRace + 1;
 	}
 	
@@ -83,6 +83,15 @@ public class AtomicTest {
 				}
 			});
 			threads[i].start();
+//			try {
+//				threads[i].join();//make threads to run one by one
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+			
+//			while(Thread.activeCount() > 1) {//control number of active thread
+//				Thread.yield();
+//			}
 		}
 		while(Thread.activeCount() > 1) {
 			Thread.yield();
@@ -108,8 +117,8 @@ public class AtomicTest {
 
 	public static void main(String[] args) throws Exception {
 //		countDownLatchTest();
-		cylicbarrierTest(false);
-//		yieldTest();
+//		cylicbarrierTest(false);
+		yieldTest(false);
 	}
 
 }
