@@ -12,11 +12,9 @@ public class NewCachedThreadPoolDemo {
 	
 	public void runBatchJobs() {
 		List<LoadDataTask> jobs = new ArrayList<LoadDataTask>();
-		jobs.add(new LoadDataTask(1));
-		jobs.add(new LoadDataTask(2));
-		jobs.add(new LoadDataTask(3));
-		jobs.add(new LoadDataTask(4));
-		jobs.add(new LoadDataTask(5));
+		for(int i=0; i < 100; i++) {
+			jobs.add(new LoadDataTask(i));
+		}
 		List<Future<String>> ret;
 		try {
 			ret = exec.invokeAll(jobs);
