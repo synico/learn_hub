@@ -1,4 +1,4 @@
-# 类加载器Classloader
+## 类加载器Classloader
 
 #### 类加载器classloader分三种:
 1. 引导类加载器bootstrap classloader：用来加载java的核心类库，比如位于/jre/lib目录下的vm.jar，core.jar。由原生代码实现，不继承自java.lang.Classloader。并且由JVM按照文件名识别（名字不符合的类库即使放在lib目录中也不会被加载）加载到VM中。引导类加载器无法被Java程序直接引用，用户在编写自定义类加载器时，如果需要把加载请求委派给引导类加载器，使用null代替即可。

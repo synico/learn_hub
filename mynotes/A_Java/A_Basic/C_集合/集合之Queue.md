@@ -1,5 +1,4 @@
 ## 集合之Queue
-***
 
 ### Queue
 #### PriorityQueue
