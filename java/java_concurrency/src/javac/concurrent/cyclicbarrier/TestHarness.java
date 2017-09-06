@@ -22,8 +22,8 @@ public class TestHarness {
 						task.run();
 						System.out.println(Thread.currentThread().getName() + " will be in await");
 						Thread.sleep(1000L);
-						cb.await();
-						System.out.println("ALL THREADS COMES HERE");
+						int rst = cb.await();
+						System.out.println(Thread.currentThread().getName() + "ALL THREADS COMES HERE, rst: " + rst);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					} catch (BrokenBarrierException e) {
@@ -43,7 +43,7 @@ public class TestHarness {
 		try {
 			long totalTime = th.timeTasks(5, new Runnable() {
 				public void run() {
-					System.out.println("xxxx==========");
+					System.out.println("xxxx==========" + Thread.currentThread().getName());
 				}
 			});
 			System.out.println("Total time: " + totalTime);

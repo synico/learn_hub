@@ -10,6 +10,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 public class RunCopyJob {
 	
 	private static final String JENKINS_URL = "http://jenkins-em.avnet.com:8080/login";
+	private static final String MUSEUM_URL = "http://www.snhm.org.cn/";
 	private static final Log log = LogFactory.getLog(RunCopyJob.class);
 	
 	private WebDriver webDriver = new HtmlUnitDriver();
@@ -35,9 +36,20 @@ public class RunCopyJob {
 		return rst;
 	}
 	
+	private boolean getCurrentPersonsNum() {
+		boolean rst = false;
+		webDriver.get(MUSEUM_URL);
+		// get current num of persons
+//		WebElement numOfPerson = webDriver.findElement(By.id("currentPersonsNum"));
+//		System.out.println(numOfPerson);
+		log.info(webDriver.getPageSource());
+		return rst;
+	}
+	
 	public static void main(String[] args) {
 		RunCopyJob cpJob = new RunCopyJob();
-		cpJob.login2Jenkins();
+//		cpJob.login2Jenkins();
+		cpJob.getCurrentPersonsNum();
 	}
 
 }
