@@ -1,4 +1,19 @@
 ## 集合之Queue
+Queue|线程安全|有界
+--:|--:|--:|
+PriorityQueue|不安全|无界
+ArrayDeque|不安全|有界
+LinkedList|不安全|无界
+ConcurrentLinkedQueue|安全|无界
+ConcurrentLinkedDeque|安全|无界
+ArrayBlockingQueue|安全|有界
+LinkedBlockingQueue|安全|无界
+LinkedBlockingDeque|安全|无界
+PriorityBlockingQueue|安全|
+LinkedTransferQueue||
+DelayQueue||
+SynchronousQueue|安全|无容量
+***
 
 ### Queue
 #### PriorityQueue
@@ -58,3 +73,9 @@ BlockingQUeue的方法以四种形式出现，对于不能立即满足但可能�
 #### DelayQueue
 
 #### PriorityBlockingQueue
+
+***
+
+### BlockingDeque
+#### ConcurrentLinkedDeque
+#### LinkedBlockingDeque
