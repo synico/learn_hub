@@ -1,6 +1,7 @@
 package javac.generic;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
 
 import sun.misc.Unsafe;
 
@@ -18,6 +19,12 @@ public class UnsafeDemo {
 			Unsafe unsafe = getUnsafeInstance();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		Integer[] lastFactors = {1};
+		Integer[] add = {2};
+		lastFactors = Arrays.copyOf(add, add.length);
+		for(Integer v : lastFactors) {
+			System.out.println(v);
 		}
 	}
 
