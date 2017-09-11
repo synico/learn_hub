@@ -36,7 +36,7 @@ object ForeachDemo {
 
     //option2
     println("option2------------------")
-    val myArray2 = Array("idx1","idx2",,"idx4")
+    val myArray2 = Array("idx1","idx2","idx4")
     myArray2.foreach(println)
 
     //option3
