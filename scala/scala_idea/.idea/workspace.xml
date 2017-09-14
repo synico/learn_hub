@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded6935a-ff46-42e6-8d6a-ce4fc3b4e7df" name="Default" comment="">
-<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scala_idea.iml" afterPath="$PROJECT_DIR$/scala_idea.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
-=======
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/nick/chapter2/abstract-types.sc" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/nick/chapter2/state-capitals-subset.sc" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/nick/chapter3/TryCatchArm.scala" />
@@ -29,7 +27,6 @@
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/libraries/" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,13 +39,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< HEAD
-      <file leaf-file-name="Future.scala" pinned="false" current-in-tab="true">
-        <entry file="jar://D:/maven/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/concurrent/Future.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="203" column="35" lean-forward="false" selection-start-line="203" selection-start-column="35" selection-end-line="203" selection-end-column="35" />
-=======
       <file leaf-file-name="NonFatal.scala" pinned="false" current-in-tab="false">
         <entry file="jar://D:/maven/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/util/control/NonFatal.scala">
           <provider selected="true" editor-type-id="text-editor">
@@ -142,7 +132,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
               <caret line="136" column="17" lean-forward="false" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
               <folding />
             </state>
           </provider>
@@ -188,9 +177,7 @@
         <option value="$PROJECT_DIR$/src/Shapes.scala" />
         <option value="$PROJECT_DIR$/src/com/nick/shapes/Point.scala" />
         <option value="$PROJECT_DIR$/src/com/nick/shapes/Shapes.scala" />
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/partial_functions.sc" />
-=======
         <option value="$PROJECT_DIR$/src/futures.sc" />
         <option value="$PROJECT_DIR$/src/factorial.sc" />
         <option value="$PROJECT_DIR$/src/com/nick/chapter2/state-capitals-subset.sc" />
@@ -201,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/ForeachDemo.scala" />
         <option value="$PROJECT_DIR$/src/com/nick/chapter3/TryCatchArm.scala" />
         <option value="$PROJECT_DIR$/src/com/nick/chapter4/match-variable.sc" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
       </list>
     </option>
   </component>
@@ -219,13 +205,10 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-<<<<<<< HEAD
           <item name="Profiles" type="6783ec58:MavenProjectsStructure$ProfilesNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-=======
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <item name="scala_idea" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
@@ -288,9 +271,6 @@
         </subPane>
       </pane>
     </panes>
-=======
-    <panes />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -494,7 +474,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15245202" sideWeight="0.49659863" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-=======
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33560312" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19410086" sideWeight="0.50572914" order="1" side_tool="true" content_ui="tabs" />
@@ -505,25 +484,18 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16770834" sideWeight="0.4913295" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215625" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1716418" sideWeight="0.5086705" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273073" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-=======
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32684824" sideWeight="0.4978678" order="0" side_tool="false" content_ui="tabs" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" x="92" y="92" width="1736" height="986" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-<<<<<<< HEAD
-=======
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25680932" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -781,12 +753,10 @@
         <state relative-caret-position="494">
           <caret line="26" column="44" lean-forward="false" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
           <folding />
-=======
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
         </state>
       </provider>
     </entry>
@@ -1066,38 +1036,31 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/src/ForeachDemo.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="32" column="39" lean-forward="false" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/util/concurrent/Executors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="150" column="37" lean-forward="false" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="37" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/upper1.sc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-=======
     <entry file="jar://D:/maven/repository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/util/control/NonFatal.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Shapes.scala" />
     <entry file="jar://D:/scala/2.11/lib/scala-library.jar!/scala/PartialFunction.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1110,22 +1073,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/util/concurrent/ExecutorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="136" column="17" lean-forward="false" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="jar://D:/scala/2.11/lib/scala-library.jar!/scala/collection/mutable/HashTable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
           <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -1141,62 +1100,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="890">
           <caret line="139" column="9" lean-forward="false" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="jar://D:/scala/2.11/lib/scala-library.jar!/scala/concurrent/Future.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="26" column="44" lean-forward="false" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/util/concurrent/AbstractExecutorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="85" column="32" lean-forward="false" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="32" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/upper2.sc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/util/concurrent/RunnableFuture.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="jar://D:/scala/2.11.8/lib/scala-library.jar!/scala/Tuple2.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/util/concurrent/FutureTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="844">
           <caret line="425" column="37" lean-forward="false" selection-start-line="425" selection-start-column="28" selection-end-line="425" selection-end-column="37" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="jar://D:/java/8.0/src.zip!/java/util/concurrent/Future.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="162" column="45" lean-forward="false" selection-start-line="162" selection-start-column="45" selection-end-line="162" selection-end-column="45" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/lang/ThreadLocal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -1214,27 +1161,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
           <caret line="212" column="43" lean-forward="false" selection-start-line="212" selection-start-column="30" selection-end-line="212" selection-end-column="43" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/partial_functions.sc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/lang/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="55" column="17" lean-forward="false" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="jar://D:/scala/2.11.8/lib/scala-library.jar!/scala/Function2.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1255,12 +1197,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="203" column="35" lean-forward="false" selection-start-line="203" selection-start-column="35" selection-end-line="203" selection-end-column="35" />
-=======
     <entry file="jar://D:/java/8.0/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="140" column="6" lean-forward="false" selection-start-line="140" selection-start-column="6" selection-end-line="140" selection-end-column="6" />
->>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
           <folding />
         </state>
       </provider>
