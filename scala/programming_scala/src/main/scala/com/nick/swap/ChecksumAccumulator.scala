@@ -1,3 +1,5 @@
+package com.nick.swap
+
 import scala.collection.mutable.Map
 
 object ChecksumAccumulator {
