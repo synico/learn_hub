@@ -10,7 +10,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Scala-2.11" level="application" />
+<<<<<<< HEAD
     <orderEntry type="library" name="scala-sdk-2.11.8" level="application" />
+=======
+>>>>>>> 61182de9badc08edbde3f5445a17bdde3e9291d7
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-actor_2.11:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.11.8" level="project" />
     <orderEntry type="library" name="Maven: com.typesafe:config:1.3.1" level="project" />

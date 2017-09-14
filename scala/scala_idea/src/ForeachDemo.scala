@@ -1,5 +1,9 @@
 object ForeachDemo {
 
+  def main(args: Array[String]): Unit = {
+    arrayDemo()
+  }
+
   val myArray = new Array[String](3)
 
   //step2
@@ -44,10 +48,5 @@ object ForeachDemo {
     val myArray3 = Array.apply("idx1", "idx2")
     myArray3.foreach(println)
   }
-
-  def main(args: Array[String]): Unit = {
-    arrayDemo()
-  }
-
 
 }
