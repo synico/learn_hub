@@ -14,3 +14,10 @@ abstract class Shape() {
 case class Circle(center: Point, radius: Double) extends Shape
 
 case class Rectangle(lowerLeft: Point, height: Double, width: Double) extends Shape
+
+object test {
+  def main(args: Array[String]): Unit = {
+   val s = Circle(Point(1.0, 2.0), 1.2)
+    s.draw(Point(1.0, 1.1))(str => println(s"ShapesDrawingActor: $str"))
+  }
+}
