@@ -1,5 +1,5 @@
 for {
-  x <- Seq(1, 2, 2.7, "one", "two", "four")
+  x <- Seq(1, 2, 2.7, "one", "two", 'four)
 } {
   val str = x match {
     case 1          => "int 1"
