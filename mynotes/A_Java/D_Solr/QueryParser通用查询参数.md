@@ -14,7 +14,7 @@ Standard, DisMax, eDisMax request query parser都支持的查询参数
 定义一个restrict返回文档超集，且不影响score的查询。filter query对于提升复杂查询速度有很大提升。因为每个filter query的结果集都独立的被缓存。  
 1) 一个查询可包含多个filter query，这个查询的结果是所有filter query的交集。  
 2) 每个查询过滤器的结果集都会独立被缓存，如果使用多个查询过滤器，可考虑合并这些filter query。  
-3) 查询过滤器中的特殊字符需要escape和encode为什么16进制的值。
+3) 查询过滤器中的特殊字符需要escape和encode为16进制的值。
 
 #### 4. fl（Field List）
 控制查询返回结果包含的字段，但仅对已索引（indexed="true"）并存储（stored="true"）的字段有效。定义时，字段以空格或逗号分隔。

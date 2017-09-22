@@ -5,6 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("all")
 public class LinkedHashMapDemo {
 	
 	private static volatile Map<String, String> map = new LinkedHashMap<String, String>();
