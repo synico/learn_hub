@@ -17,8 +17,10 @@
 基于红黑树的可排序Map实现。
 
 #### LinkedHashMap
-1. HashMap的子类。
-2. 与HashMap的区别在于，它维护着一个运行于所有元素的双向链表，用来保存元素将键插入到Map的顺序。可通过迭代器按插入顺序遍历元素。
+##### JDK8
+* 通过覆写HashMap的newNode方法实现put元素时，创建扩展自HashMap.Node的LinkedHashMap.Entry。LinkedHashMap.Entry中存储了节点的hash值，key，value以及其前后节点的引用。
+* LinkedHashMap同时持有头节点head和尾节点tail。
+##### JDK7
 
 #### IdentityHashMap
 1. 键的hashcode不是由元素的hashcode函数计算，而是由System.identityHashCode方法计算。这是Object.hashCode方法根据对象的内存地址来计算散列码时所用的方式。
