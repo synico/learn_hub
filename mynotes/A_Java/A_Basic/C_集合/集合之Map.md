@@ -29,18 +29,24 @@
 ***
 
 #### IdentityHashMap
-1. 键的hashcode不是由元素的hashcode函数计算，而是由System.identityHashCode方法计算。这是Object.hashCode方法根据对象的内存地址来计算散列码时所用的方式。
-2. 在两个对象比较时，IdentityHashMap使用==，而不是equals。
+* 键的hashcode不是由元素的hashcode函数计算，而是由System.identityHashCode方法计算。这是Object.hashCode方法根据对象的内存地址来计算散列码时所用的方式。
+* 在两个对象比较时，IdentityHashMap使用==，而不是equals。
 ***
 
 ## 线程安全Map
 
 #### ConcurrentHashMap
 对检索完全同步，更新高预期同步的哈希表。减小了多线程下，更新操作和同步读取的竞争。
-1. 检索时未使用锁来实现同步，并且也不支持任何方式锁整个表来实现访问控制。
-2. 检索实现为非阻塞模式，仅保证弱一致性。
-3. 迭代器设计为每次仅能由一个线程使用。
-4. 组合操作如size方法，isEmpty方法和containsValue方法仅在没有其他线程更新当前表时有用（弱一致性）。
+* 检索时未使用锁来实现同步，并且也不支持任何方式锁整个表来实现访问控制。
+* 检索实现为非阻塞模式，仅保证弱一致性。
+* 迭代器设计为每次仅能由一个线程使用。
+* 组合操作如size方法，isEmpty方法和containsValue方法仅在没有其他线程更新当前表时有用（弱一致性）。
+##### JDK7实现
+* 通过定义继承自ReentrantLock的Segment类实现分段锁。在每个桶上加上一个segment锁，实现并发访问时仅锁住需要访问的桶。
+* 仅在需要遍历整个map时才锁住所有桶。
+##### JDK8实现
+* 通过CAS和synchronized关键字实现同步。
 ***
 
 #### ConcurrentSkipListMap
+同步的可排序map。

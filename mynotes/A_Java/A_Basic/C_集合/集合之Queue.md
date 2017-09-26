@@ -16,6 +16,15 @@ SynchronousQueue|安全|无容量
 ***
 
 ### Queue
+
+Queue定义的方法
+操作|抛出异常|返回特殊值
+:--|:--|:--
+插入|add(e)|offer(e)
+移除|remove()|poll()
+检查|element()|peek()
+***
+
 #### PriorityQueue
 * 由高效的数据结构堆 (可自我调整的二叉树) 实现。  
 * 不允许添加null到队列中，否则抛出NPE。  
@@ -30,6 +39,44 @@ SynchronousQueue|安全|无容量
 ***
 
 ### Deque
+
+Deque定义的方法
+* 头元素
+
+操作|抛出异常|返回特殊值
+:--|:--|:--
+插入|addFirst(e)|offerFirst(e)
+移除|removeFirst()|pollFirst()
+检查|getFirst()|peekFirst()
+
+* 尾元素
+
+操作|抛出异常|返回特殊值
+:--|:--|:--
+插入|addLast(e)|offerLast(e)
+移除|removeLast()|pollLast()
+检查|getLast()|peekLast()
+
+* Queue和Deque方法比较
+
+Queue方法|等价的Deque方法
+:--|:--
+add(e)|addLast(e)
+offer(e)|offerLast(e)
+remove()|removeFirst()
+poll()|pollFirst()
+element()|getFirst()
+peek()|peekFirst()
+
+* Stack和Deque方法比较
+
+Stack方法|等价的Deque方法
+:--|:--
+push(e)|addFirst(e)
+pop()|removeFirst()
+peek()|peekFirst()
+***
+
 #### ArrayDeque
 * 由循环数组实现，两个数组下标 (head, tail)保存数组头尾信息。数组头尾都可以添加删除元素，但是不能在队列中间添加元素。  
 * 不允许添加null到队列中，否则抛出NPE。  
@@ -50,6 +97,7 @@ BlockingQUeue的方法以四种形式出现，对于不能立即满足但可能�
 插入|add(e)|offer(e)|put(e)|offer(e, time, unit)
 移除|remove()|poll()|take()|poll(time, unit)
 检查|element()|peek()|无|无
+***
 
 #### ArrayBlockingQueue
 * 以数组作为存储结构的FIFO有界阻塞队列，使用ReentrantLock锁实现线程安全。
@@ -73,9 +121,27 @@ BlockingQUeue的方法以四种形式出现，对于不能立即满足但可能�
 #### DelayQueue
 
 #### PriorityBlockingQueue
+* 头元素
 
+操作|抛出异常|特殊值|阻塞|给定时间内阻塞
+:--|:--|:--|:--|:--
+插入|addFirst(e)|offerFirst(e)|putFirst(e)|offerFirst(e, time, unit)
+移除|removeFirst()|pollFirst()|takeFirst()|pollFirst(time, unit)
+检查|getFirst()|peekFirst()|无|无
+
+* 尾元素
+
+操作|抛出异常|特殊值|阻塞|给定时间内阻塞
+:--|:--|:--|:--|:--
+插入|addLast(e)|offerLast(e)|putLast(e)|offerLast(e, time, unit)
+移除|removeLast()|pollLast()|takeLast()|pollLast(time, unit)
+检查|getLast()|peekLast()|无|无
 ***
 
 ### BlockingDeque
+#### BlockingDeque方法
+
+
+***
 #### ConcurrentLinkedDeque
 #### LinkedBlockingDeque
