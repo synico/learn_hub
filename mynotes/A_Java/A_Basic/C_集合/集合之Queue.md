@@ -18,6 +18,7 @@ SynchronousQueue|安全|无容量
 ### Queue
 
 Queue定义的方法
+
 操作|抛出异常|返回特殊值
 :--|:--|:--
 插入|add(e)|offer(e)
