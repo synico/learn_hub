@@ -83,7 +83,7 @@ peek()|peekFirst()
 * 不允许添加null到队列中，否则抛出NPE。  
 * 需要实现FILO时，ArrayDeque比使用Stack快。
 * 需要实现FIFO时，ArrayDeque比使用LinkedList快。因为使用LinkedList，在向其中添加元素时，需要创建更多的对象来完成存储。在GC运行时，需要更多的时间回收更多的空间。
-****
+***
 
 ### BlockingQueue
 #### BlockingQueue方法
