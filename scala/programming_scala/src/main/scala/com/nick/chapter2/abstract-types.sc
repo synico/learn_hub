@@ -8,6 +8,10 @@ abstract class BulkReader[In] {
 class StringBulkReader(val source: String) extends BulkReader[String] {
 //  type In = String
   def read: String = source.toUpperCase
+
+  def main(args: Array[String]) = {
+    println("")
+  }
 }
 
 class FileBulkReader(val source: File) extends BulkReader[File] {
