@@ -1,4 +1,4 @@
-# 集合之List
+## 集合之List
 
 ### ArrayList
 数据结构：由数组实现，可随机访问 (实现了RandomAccess接口) 。  
