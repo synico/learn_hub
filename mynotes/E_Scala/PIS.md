@@ -8,6 +8,7 @@
 * Scala不能定义静态成员，而是代之以定义单例对象 (singleton object) 。
 * 单例对象和类共享同一个名称，并存在于同一个源文件里，单例对象被称为这个类的伴生对象 (companion object)，这个类被称为这个单例对象的伴生类 (companion class)。类和它的伴生对象可以互相访问其私有成员。
 * 单例对象在第一次被访问的时候才会被初始化。
+* 对于case类，编译器自动生成一个伴生对象。
 
 #### Scala程序
 * Scala每个源文件都隐含了对包java.lang，包scala，以及单例对象Predef的成员引用。包scala中的Predef对象包含了许多有用的方法。如println方法和assert方法。
