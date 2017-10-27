@@ -48,3 +48,26 @@
 * 主构造器是整个类体，构造器所需参数都罗列在类名称后面。
 * 辅助构造器被命名为this，辅助构造器第一个表达式必须调用主构造器或其他辅助构造器。
 * 编译器要求被调用的构造器在代码中先于当前构造器出现。
+
+### 6.8 遍历，映射，过滤，折叠与归约
+#### 遍历 (foreach)
+Scala容器标准的遍历方法是foreach (scala.collection.IterableLike)，IterableLike的部分子类可能会重新定义该方法。
+#### 映射 (map)
+map方法返回一个与原集合类型大小相同的新集合，其中每个元素均由原集合的对应元素转换得到。
+#### 扁平映射 (flatMap)
+* flatMap中，对原始集合中的每个元素，都分别产生零或多个元素。调用flatMap时传入一个函数，该函数对每个输入返回一个集合。然后flatMap把生成的多个集合合并 ("压扁") 为一个集合。
+* flatMap不能处理超过一层的集合。如果处理的是深层嵌套集合，那么集合只能被压扁一层。
+#### 过滤 (filter)
+遍历集合并抽取满足特定条件的元素组成一个新的集合。
+* def drop (n : Int) : TraversableLike.Repr
+* def dropWhile (p : (A) => Boolean) : TraversableLike.Repr
+* def exists (p : (A) => Boolean) : Boolean
+* def filter (p : (A) => Boolean) : TraversableLike.Repr
+* def filterNot (p : (A) => Boolean) : TraversableLike.Repr
+* def find (p : (A) => Boolean) : Option[A]
+* def forall (p : (A) => Boolean) : Boolean
+* def partition (p : (A) => Boolean) : (TraversableLike.Repr, TraversableLike.Repr)
+* def take (n : Int) : TraversableLike.Repr
+* def takeWhile (p : (A) => Boolean) : TraversableLike.Repr
+#### 折叠 (fold) 与规约 (reduce)
+两者很相似，它们都是将一个集合"缩小"成一个更小的集合或一个值的操作。
