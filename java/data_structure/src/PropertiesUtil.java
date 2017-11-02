@@ -49,9 +49,13 @@ public class PropertiesUtil {
 					if(s.contains("=")) {
 						String[] keyValues = s.split("=", 2);
 						if(keyValues.length == 2) {
-							entries.put(keyValues[0], keyValues[1]);
+							if(fileName.equals("avn_text_cn.properties")) {
+								entries.put(keyValues[0].trim(), " " + keyValues[1]);
+							} else {
+								entries.put(keyValues[0].trim(), keyValues[1]);
+							}
 						} else {
-							entries.put(keyValues[0], "");
+							entries.put(keyValues[0].trim(), "");
 						}
 					} else {
 						if("".equals(s)) {
@@ -78,12 +82,13 @@ public class PropertiesUtil {
 	}
 	
 	public static void main(String[] args) {
-		Map<String, String> oldEntries = PropertiesUtil.loadFiles("D:/IBM/WCDE_ENT70/workspace/Stores/src/AvnetSAS","AvnetStoreText_zh_CN.properties");
+		Map<String, String> oldEntries = PropertiesUtil.loadFiles("E:/scm/svn/DXP_current/workspace/Stores/src/AvnetSAS","AvnetStoreText_zh_CN.properties");
 		Map<String, String> newEntries = PropertiesUtil.loadFiles("E:/temp", "avn_text_cn.properties");
 		System.out.println("old entries: " + oldEntries.size());
 		System.out.println("new entries: " + newEntries.size());
 		
 		oldEntries.putAll(newEntries);
+		System.out.println("merged entries: " + oldEntries.size());
 		
 		try {
 			Writer writer = new FileWriter("E:/temp/output/AvnetStoreText_zh_CN.properties");
@@ -96,7 +101,7 @@ public class PropertiesUtil {
 					} else if("".equals(v)) {
 						bWriter.write(k + "\n");
 					} else {
-						bWriter.write(k + "=" + v + "\n");
+						bWriter.write(k + " =" + v + "\n");
 					}
 				} catch (IOException e) {
 					e.printStackTrace();
