@@ -49,6 +49,10 @@ public class PropertiesUtil {
 					if(s.contains("=")) {
 						String[] keyValues = s.split("=", 2);
 						if(keyValues.length == 2) {
+							String key = keyValues[0].trim();
+//							if(entries.containsKey(key)) {
+//								System.out.println(key);
+//							}
 							if(fileName.equals("avn_text_cn.properties")) {
 								entries.put(keyValues[0].trim(), " " + keyValues[1]);
 							} else {
@@ -86,6 +90,16 @@ public class PropertiesUtil {
 		Map<String, String> newEntries = PropertiesUtil.loadFiles("E:/temp", "avn_text_cn.properties");
 		System.out.println("old entries: " + oldEntries.size());
 		System.out.println("new entries: " + newEntries.size());
+		
+		for(String key : newEntries.keySet()) {
+			if(oldEntries.containsKey(key)) {
+				String oldValue = oldEntries.get(key).trim();
+				String newValue = newEntries.get(key).trim();
+				if(!oldValue.equals(newValue)) {
+					System.out.println(key + "," + oldEntries.get(key) + "," + newEntries.get(key));
+				}
+			}
+		}
 		
 		oldEntries.putAll(newEntries);
 		System.out.println("merged entries: " + oldEntries.size());
