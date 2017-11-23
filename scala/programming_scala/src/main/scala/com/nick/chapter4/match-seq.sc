@@ -1,0 +1,37 @@
+
+val nonEmptySeq     = Seq(1, 2, 3, 4, 5)
+val emptySeq        = Seq.empty
+val nonEmptyList    = List(1, 2, 3, 4, 5)
+val emptyList       = Nil
+val nonEmptyVector  = Vector(1, 2, 3, 4, 5)
+val emptyVector     = Vector.empty[Int]
+val nonEmptyMap     = Map("one" -> 1, "two" -> 2, "three" -> 3)
+val emptyMap        = Map.empty[String, Int]
+
+def seqToString[T](seq: Seq[T]): String = seq match {
+  case head +: tail => s"$head +: " + seqToString(tail)
+  case Nil => "Nil"
+}
+
+def seqToString2[T](seq: Seq[T]): String = seq match {
+  case head +: tail => s"($head +: ${seqToString2(tail)})"
+  case Nil => "Nil"
+}
+
+for (seq <- Seq(
+  nonEmptySeq, emptySeq, nonEmptyList, emptyList,
+  nonEmptyVector, emptyVector, nonEmptyMap.toSeq, emptyMap.toSeq
+)) {
+  println(seqToString(seq))
+}
+
+val combinedSeq = Seq(
+  nonEmptySeq, emptySeq, nonEmptyList, emptyList,
+  nonEmptyVector, emptyVector, nonEmptyMap.toSeq, emptyMap.toSeq
+)
+
+println(nonEmptyList.headOption.get)
+
+for (seq <- Seq(nonEmptySeq, emptySeq, nonEmptyMap.toSeq)) {
+  println(seqToString2(seq))
+}
