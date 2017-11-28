@@ -18,11 +18,42 @@ Scala库中包含TupleN类，用于组建N元素组，它以小括号加上逗�
 ***
 
 ### 模式匹配
-
+#### 简单匹配
+```
+val bools = Seq(true, false)
+for (bool <- bools) {
+  bool match {
+    case true => println("Got heads")
+    case false => println("Got tails")
+  }
+}
+```
+#### match中的值和变量
+```
+for {
+  x <- Seq(1, 2, 2.7)
+} {
+  val str = x match {
+    case 1  => "int i"
+    case i: Int => "other int: " + i
+    case unexpected => "unexpected value: " + unexpected
+  }
+  println(str)
+}
+```
+#### 序列的匹配
+```
+def seqToString[T](seq: Seq[T]): String = seq match {
+  case head +: tail => s"$head +: " + seqToString(tail)
+  case Nil => "Nil"
+}
+```
 ***
 
 ### 隐式参数
 方法声明中包含implicit关键字标记的方法参数，如果未输入隐式参数且代码所处作用域存在类型兼容的值时，类型兼容值会从作用域中调出并使用，反之，将抛出编译错误。
+
+***
 
 ### 函数式编程
 * 作为某个对象成员的函数被称为方法。
