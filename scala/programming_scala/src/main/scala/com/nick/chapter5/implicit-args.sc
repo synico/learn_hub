@@ -2,7 +2,8 @@
 def calcTax(amount: Float)(implicit rate: Float): Float = amount * rate
 
 object SimpleStateSalesTax {
-  implicit val rate: Float = 0.05F
+  //implicit val rate: Float = 0.05F
+  val rate: Float = 0.05F
 }
 
 case class ComplicatedSalesTaxData(
@@ -22,7 +23,8 @@ object ComplicatedSalesTax {
 }
 
 {
-  import SimpleStateSalesTax.rate
+  //import SimpleStateSalesTax.rate
+  implicit val r = SimpleStateSalesTax.rate
 
   val amount = 100F
   println(s"Tax on $amount = ${calcTax(amount)}")
