@@ -41,14 +41,14 @@ package progscala2.implicits {
         }
       }
 
-//      implicit val jrowToInt: (JRow,String) => Int = {
-//            println("call implicits.jrowToInt")
-//        (jrow: JRow, colName: String) => jrow.getInt(colName)
-//      }
-//      implicit val jrowToDouble: (JRow,String) => Double =
-//        (jrow: JRow, colName: String) => jrow.getDouble(colName)
-//      implicit val jrowToString: (JRow,String) => String =
-//        (jrow: JRow, colName: String) => jrow.getText(colName)
+      implicit val jrowToInt: (JRow,String) => Int = {
+            println("call implicits.jrowToInt")
+        (jrow: JRow, colName: String) => jrow.getInt(colName)
+      }
+      implicit val jrowToDouble: (JRow,String) => Double =
+        (jrow: JRow, colName: String) => jrow.getDouble(colName)
+      implicit val jrowToString: (JRow,String) => String =
+        (jrow: JRow, colName: String) => jrow.getText(colName)
     }
 
     object DB {
