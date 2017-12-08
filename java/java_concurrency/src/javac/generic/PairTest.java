@@ -11,6 +11,13 @@ public class PairTest {
 		Pair pair = interval;
 		Object d3 = new Date();
 		pair.setSecond(d3);
+		
+		int j = 0;
+		for(int i=0; i < 100; i++) {
+			j = j++;
+		}
+		// j = 0
+		System.out.println(j);
 	}
 
 }
