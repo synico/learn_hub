@@ -115,8 +115,8 @@ def seqToString[T](seq: Seq[T]): String = seq match {
 #### 参数多态
 在集合List[A]中使用任何类型作为类型A，这种特性被称为参数多态。在方法List的通用实现中，允许使用任何类型的实例作为List的元素。
 #### 协变和逆变
-* +A意味着List[A]类型是A类型的协变 (covariant) 。
-* 逆变 () 。
+* +A意味着List[A]类型是A类型的协变 (covariance) 。
+* -A表示逆变 (contravariance) 。
 #### 协类型和逆类型
 * List[+A]中A之前的+表示如果B是A的子类，则List[B]也是List[A]的子类型，称为协类型。
 * List[-A]中A之前的-表示如果B是A的子类型，则List[B]是List[A]的父类型，称为逆类型。
