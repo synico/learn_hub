@@ -31,7 +31,7 @@ var myObject = {
 
 myObject.increment();
 console.log("myObject.value: " + myObject.value);
-myObject.increment(2);
+myObject.increment(2,2);
 console.log("myObject.value: " + myObject.value);
 
 //----The Function Invocation Pattern
@@ -49,6 +49,16 @@ myObject.double = function () {
 myObject.double();
 console.log("myObject.value: " + myObject.value);
 
+function test(params){
+    var t = new Array();
+    if (params != null && params != 'undefined'){
+        for(i in params) {
+        t[i]=params[i];
+            console.log(params[i]);
+        }
+    }
+}
+
 var hisObject = (function () {
 	var value = 0;
 	
@@ -64,9 +74,13 @@ var hisObject = (function () {
 
 hisObject.increment();
 console.log("hisObject: " + hisObject);
+
+
 </script>
 </head>
 
 <body>
+
+<a href="javascript:test({x:'x',y:'y'})">test</a>
 </body>
 </html>
