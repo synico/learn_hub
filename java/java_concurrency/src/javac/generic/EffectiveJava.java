@@ -26,9 +26,17 @@ public class EffectiveJava {
 		List<?>[] list = new List<?>[2];
 		List[] list1 = new List[3];
 	}
+	
+	private static void rulexxx() {
+		List<Number> list = new ArrayList<Number>();
+		list.add(1);
+		list.add(2.1f);
+		list.add(3.2d);
+	}
 
 	public static void main(String[] args) {
 		rule23();
+		rulexxx();
 	}
 
 }
