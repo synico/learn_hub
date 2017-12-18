@@ -1,6 +1,6 @@
 ## 集合之Queue
 Queue|线程安全|有界
---:|--:|--:|
+:--|:--|:--
 PriorityQueue|不安全|无界
 ArrayDeque|不安全|有界
 LinkedList|不安全|无界

@@ -86,8 +86,8 @@ public class PropertiesUtil {
 	}
 	
 	public static void main(String[] args) {
-		Map<String, String> oldEntries = PropertiesUtil.loadFiles("E:/scm/svn/DXP_current/workspace/Stores/src/AvnetSAS","AvnetStoreText_zh_CN.properties");
-		Map<String, String> newEntries = PropertiesUtil.loadFiles("E:/temp", "avn_text_cn.properties");
+		Map<String, String> oldEntries = PropertiesUtil.loadFiles("D:/IBM/WCDE_ENT70/workspace/Stores/src/AvnetSAS","AvnetStoreText_zh_CN.properties");
+		Map<String, String> newEntries = PropertiesUtil.loadFiles("D:/IBM/WCDE_ENT70/workspace/Stores/src/AvnetSAS", "AvnetStoreText_zh_TW.properties");
 		System.out.println("old entries: " + oldEntries.size());
 		System.out.println("new entries: " + newEntries.size());
 		
@@ -105,7 +105,7 @@ public class PropertiesUtil {
 		System.out.println("merged entries: " + oldEntries.size());
 		
 		try {
-			Writer writer = new FileWriter("E:/temp/output/AvnetStoreText_zh_CN.properties");
+			Writer writer = new FileWriter("E:/AvnetStoreText_zh_TW.properties");
 			BufferedWriter bWriter = new BufferedWriter(writer);
 			
 			oldEntries.forEach((k, v) -> {
