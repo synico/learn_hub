@@ -86,22 +86,24 @@ public class PropertiesUtil {
 	}
 	
 	public static void main(String[] args) {
-		Map<String, String> oldEntries = PropertiesUtil.loadFiles("D:/IBM/WCDE_ENT70/workspace/Stores/src/AvnetSAS","AvnetStoreText_zh_CN.properties");
-		Map<String, String> newEntries = PropertiesUtil.loadFiles("D:/IBM/WCDE_ENT70/workspace/Stores/src/AvnetSAS", "AvnetStoreText_zh_TW.properties");
+		Map<String, String> oldEntries = PropertiesUtil.loadFiles("D:/IBM/WCDE_ENT70/workspace/Stores/src/AvnetSAS","AvnetStoreText_zh_TW.properties");
+		Map<String, String> newEntries = PropertiesUtil.loadFiles("E:/temp", "avn_text.properties");
 		System.out.println("old entries: " + oldEntries.size());
 		System.out.println("new entries: " + newEntries.size());
 		
 		for(String key : newEntries.keySet()) {
 			if(oldEntries.containsKey(key)) {
-				String oldValue = oldEntries.get(key).trim();
-				String newValue = newEntries.get(key).trim();
-				if(!oldValue.equals(newValue)) {
-					System.out.println(key + "," + oldEntries.get(key) + "," + newEntries.get(key));
-				}
+//				String oldValue = oldEntries.get(key).trim();
+//				String newValue = newEntries.get(key).trim();
+//				if(!oldValue.equals(newValue)) {
+//					System.out.println(key + "," + oldEntries.get(key) + "," + newEntries.get(key));
+//				}
+				String removedKey = oldEntries.remove(key);
+				System.out.println("Removed Key: " + key + ", Removed value: " + removedKey);
 			}
 		}
 		
-		oldEntries.putAll(newEntries);
+//		oldEntries.putAll(newEntries);
 		System.out.println("merged entries: " + oldEntries.size());
 		
 		try {
