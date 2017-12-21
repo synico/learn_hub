@@ -34,20 +34,14 @@ public class OneWayLinkedList<E> {
 	}
 	
 	public void reverse() {
-		Node<E> cursor = head;
-		Node<E> previous = head;
+		Node<E> cursor = null;
+		Node<E> previous = null;
 		Node<E> current = head;
 		for (int idx = 0; idx < size; idx++) {
-			if(head == current) {
-				cursor = cursor.next;
-				current.next = null;
-				current = cursor;
-			} else {
-				current = cursor;
-				cursor = cursor.next;
-				current.next = previous;
-				previous = current;
-			}
+			cursor = current.next;
+			current.next = previous;
+			previous = current;
+			current = cursor;
 		}
 		current = tail;
 		tail = head;
