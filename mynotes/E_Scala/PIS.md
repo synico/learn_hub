@@ -1,5 +1,5 @@
-##Programming in Scala
-###类和对象
+## Programming in Scala
+### 类和对象
 
 * Scala里方法参数的一个重要特征是它们都是val。
 * 如果没有发现任何显示的放回语句，Scala方法将返回方法中最后一次计算得到的值。
