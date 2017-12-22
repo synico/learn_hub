@@ -95,15 +95,16 @@ public class OneWayLinkedList<E> {
     }
 
     /** VERSION2 input parameter Node<E> **/
-    public Node<E> previousNode(Node<E> head) {
+    public Node<E> previousNode(Node<E> current) {
         Node<E> newHead = null;
-        System.out.println("value: " + head.value);
-        if (head.next == null) {
-            return head;
-        } 
-        newHead = previousNode(head.next);
-        head.next.next = head;
-        head.next = null;
+        System.out.println("value: " + current.value);
+        if (current.next == null) {
+            return current;
+        }
+        Node<E> nextNode = current.next;
+        newHead = previousNode(nextNode);
+        nextNode.next = current;
+        nextNode = null;
         return newHead;
     }
     
