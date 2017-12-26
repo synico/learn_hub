@@ -7,7 +7,7 @@ public class OneWayLinkedList<E> {
     private Node<E> tail;
 
     private int size = 0;
-    
+
     private static class Node<E> {
         E value;
         Node<E> next;
@@ -16,7 +16,7 @@ public class OneWayLinkedList<E> {
             this.value = value;
             this.next = next;
         }
-        
+
         public String toString() {
             return "Node Value: " + value;
         }
@@ -46,7 +46,7 @@ public class OneWayLinkedList<E> {
         }
         return false;
     }
-    
+
     /** VERSION1 without parameter Node<E> **/
 
     public void reverse() {
@@ -81,7 +81,7 @@ public class OneWayLinkedList<E> {
         }
         System.out.println();
     }
-    
+
     public void printList2(String msg) {
         System.out.print(msg);
         for (Node<E> cursor = tail;;) {
@@ -107,28 +107,27 @@ public class OneWayLinkedList<E> {
         nextNode = null;
         return newHead;
     }
-    
+
     public int fib(int i) {
-        if(i <= 1) {
+        if (i <= 1) {
             return 1;
         } else {
-            return i + fib(i-1);
+            return i + fib(i - 1);
         }
     }
-    
 
     public static void main(String[] args) {
         OneWayLinkedList<Integer> owll = new OneWayLinkedList<Integer>();
         owll.add(1);
         owll.add(2);
         owll.add(3);
-//        owll.printList1("Print entire list: ");
-//        owll.remove(2);
-//        owll.printList1("Print list after remove(2): ");
+        // owll.printList1("Print entire list: ");
+        // owll.remove(2);
+        // owll.printList1("Print list after remove(2): ");
         owll.add(4);
         owll.add(5);
-//        owll.reverse();
-//        owll.printList1("Print list after reversed: ");
+        // owll.reverse();
+        // owll.printList1("Print list after reversed: ");
         owll.printList1("Foreach list before reverse: ");
         owll.head = owll.previousNode(owll.head);
         owll.printList1("Foreach list after reverse: ");
