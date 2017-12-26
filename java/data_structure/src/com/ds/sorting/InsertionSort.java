@@ -1,5 +1,7 @@
 package com.ds.sorting;
 
+import com.ds.util.PrintUtil;
+
 public class InsertionSort {
 
     public static int[] insertionSort1(int[] array) {
@@ -23,30 +25,47 @@ public class InsertionSort {
         int j;
         for (int p = 1; p < array.length; p++) {
             int temp = array[p];
-            for (j = p; j > 0 && temp < array[j - 1]; j--) {
+            for (j = p; j > 0; j--) {
+                if(temp < array[j - 1]) {
+                    array[j] = array[j - 1];
+                    array[j - 1] = temp;
+                }
+            }
+        }
+        return array;
+    }
+    
+    public static int[] insertionSort3(int[] array) {
+        int j;
+        for(int p = 1; p < array.length; p++) {
+            int temp = array[p];//Element need to be checked from array[0] to array[p]
+            for(j = p; j> 0 && temp < array[j - 1] ; j--) {
                 array[j] = array[j - 1];
             }
             array[j] = temp;
         }
         return array;
     }
-
-    private static void debugInfo(int idx1, int idx2, int[] array) {
-        StringBuilder str = new StringBuilder();
-        str.append("[");
-        for (int i : array) {
-            str.append(i);
-            str.append(",");
+    
+    public static int[] insertionSort4(int[] array) {
+        int j;
+        for(int p = 1; p < array.length; p++) {
+            int temp = array[p];
+            j = p;
+            while(j > 0 && temp < array[j - 1]) {
+                array[j] = array[j - 1];
+                j--;
+            }
+            array[j] = temp;
         }
-        str.append("]");
-        System.out.println("i: " + idx1 + ", j: " + idx2 + ", array: " + str.toString());
+        return array;
     }
 
     public static void main(String[] args) {
         int[] demo = { 34, 8, 64, 51, 32, 21 };
-        debugInfo(0, 0, demo);
-        int[] sortedArray = insertionSort1(demo);
-        debugInfo(0, 0, sortedArray);
+        PrintUtil.printList(demo);
+        int[] sortedArray = insertionSort4(demo);
+        PrintUtil.printList(sortedArray);
     }
 
 }
