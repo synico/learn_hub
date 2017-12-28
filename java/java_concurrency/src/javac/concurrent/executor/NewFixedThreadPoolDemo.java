@@ -7,30 +7,30 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class NewFixedThreadPoolDemo {
-	
-	private ExecutorService exec = Executors.newFixedThreadPool(5);
-	
-	public void runBatchJobs() {
-		List<LoadDataTask> jobs = new ArrayList<LoadDataTask>();
-		for(int i=0; i < 100; i++) {
-			jobs.add(new LoadDataTask(i));
-		}
-		List<Future<String>> ret;
-		try {
-			ret = exec.invokeAll(jobs);
-			for(Future<String> job : ret) {
-				if(job.isDone()) {
-					System.out.println(job.get());
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		exec.shutdown();
-	}
 
-	public static void main(String[] args) {
-		new NewFixedThreadPoolDemo().runBatchJobs();
-	}
+    private ExecutorService exec = Executors.newFixedThreadPool(5);
+
+    public void runBatchJobs() {
+        List<LoadDataTask> jobs = new ArrayList<LoadDataTask>();
+        for (int i = 0; i < 100; i++) {
+            jobs.add(new LoadDataTask(i));
+        }
+        List<Future<String>> ret;
+        try {
+            ret = exec.invokeAll(jobs);
+            for (Future<String> job : ret) {
+                if (job.isDone()) {
+                    System.out.println(job.get());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        exec.shutdown();
+    }
+
+    public static void main(String[] args) {
+        new NewFixedThreadPoolDemo().runBatchJobs();
+    }
 
 }
