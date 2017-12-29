@@ -9,16 +9,19 @@ public class MergeSort {
         if(left < right) {
             int center = (left + right)/2;
             mergeSort(a, temp, left, center);
+            psg("@left: " + left + ", right: " + right + ", center: " + center);
             mergeSort(a, temp, center + 1, right);
+            psg("$left: " + left + ", right: " + right + ", center: " + center);
             merge(a, temp, left, center + 1, right);
+            PrintUtil.printList(a);
         }
     }
     
     private static void merge(int [] a, int [] temp, int leftPos, int rightPos, int rightEnd) {
-        psg("   start to merge ==== leftPos: " + leftPos + ", rightPos: " + rightPos + ", rightEnd: " + rightEnd);
         int leftEnd = rightPos - 1;
         int tmpPos = leftPos;
         int numElements = rightEnd - leftPos + 1;
+        psg("   start to merge ==== leftPos: " + leftPos + ", rightPos: " + rightPos + ", rightEnd: " + rightEnd + ", numElements: " + numElements);
         
         //Main Loop
         while(leftPos <= leftEnd && rightPos <= rightEnd) {
@@ -54,9 +57,10 @@ public class MergeSort {
     
     public static void main(String[] args) {
         int[] demo = {24, 13, 26, 1, 2, 27, 38, 15};
-        PrintUtil.printList(demo);
-        MergeSort.mergeSort(demo);
-        PrintUtil.printList(demo);
+        int[] demo1 = {49, 38, 65, 97, 76, 13, 27};
+//        PrintUtil.printList(demo);
+        MergeSort.mergeSort(demo1);
+//        PrintUtil.printList(demo);
     }
     
     private static void psg(String msg) {
