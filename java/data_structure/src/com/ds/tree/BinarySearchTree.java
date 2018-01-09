@@ -22,6 +22,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
             left = lt;
             right = rt;
         }
+        
+        public String toString() {
+            return "" + element;
+        }
     }
 
     private BinaryNode<T> root;
@@ -36,14 +40,6 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         cmp = c;
     }
 
-    private int myCompare(T lhs, T rhs) {
-        if (cmp != null) {
-            return cmp.compare(lhs, rhs);
-        } else {
-            return ((Comparable) lhs).compareTo(rhs);
-        }
-    }
-
     public void makeEmpty() {
         root = null;
     }
@@ -56,16 +52,16 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         return contains(x, root);
     }
 
-    public T findMin() {
+    public BinaryNode<T> findMin() {
         if (isEmpty())
             throw new NullPointerException();
-        return findMin(root).element;
+        return findMin(root);
     }
 
-    public T findMax() {
+    public BinaryNode<T> findMax() {
         if (isEmpty())
             throw new NullPointerException();
-        return findMax(root).element;
+        return findMax(root);
     }
 
     public void insert(T x) {
@@ -77,7 +73,15 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
     }
 
     public void printTree() {
-
+        printTree(root);
+    }
+    
+    private int myCompare(T lhs, T rhs) {
+        if (cmp != null) {
+            return cmp.compare(lhs, rhs);
+        } else {
+            return ((Comparable) lhs).compareTo(rhs);
+        }
     }
 
     private boolean contains(T x, BinaryNode<T> t) {
@@ -86,7 +90,6 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         }
 
         int compareResult = this.myCompare(x, t.element);
-
         if (compareResult < 0) {
             return contains(x, t.left);
         } else if (compareResult > 0) {
@@ -99,15 +102,29 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
     private BinaryNode<T> findMin(BinaryNode<T> t) {
         if (t == null) {
             return null;
-        } else if (t.left == null) {
-            return t;
         }
-        return findMin(t);
+        if(t.left == null) {
+            return t;
+        } else {
+            return findMin(t.left);
+        }
     }
 
     private BinaryNode<T> findMax(BinaryNode<T> t) {
-        if (t != null) {
-            while (t.right != null) {
+        if (t == null) {
+            return null;
+        }
+        
+        if(t.right == null) {
+            return t;
+        } else {
+            return findMax(t.right);
+        }
+    }
+    
+    private BinaryNode<T> findMaxByWhile(BinaryNode<T> t) {
+        if(t != null) {
+            while(t.right != null) {
                 t = t.right;
             }
         }
@@ -115,15 +132,27 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
     }
 
     private BinaryNode<T> insert(T x, BinaryNode<T> t) {
-        if (t == null) {
+        if (t == null) {// empty tree
             t = new BinaryNode(x, null, null);
+        } else {
+            int compareResult = this.myCompare(x, t.element);
+            if (compareResult < 0) {
+//                if(t.left == null) {
+//                    t.left = new BinaryNode(x, null, null);
+//                } else {
+//                    insert(x, t.left);
+//                }
+                t.left = insert(x, t.left);
+            } else {
+//                if(t.right == null) {
+//                    t.right = new BinaryNode(x, null, null);
+//                } else {
+//                    insert(x, t.right);
+//                }
+                t.right = insert(x, t.right);
+            }
         }
-
-        int compareResult = this.myCompare(x, t.element);
-        if (compareResult < 0) {
-
-        }
-        return null;
+        return t;
     }
 
     /**
@@ -157,11 +186,32 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
     }
 
     private void printTree(BinaryNode<T> t) {
-
+        if(t != null) {
+            System.out.println("Node: " + t.element);
+            if(t.left != null) {
+                printTree(t.left);
+            }
+            if(t.right != null) {
+                printTree(t.right);
+            }
+        }
     }
 
     public static void main(String[] args) {
-
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(6);
+        bst.insert(2);
+        bst.insert(8);
+        bst.insert(1);
+        bst.insert(4);
+        bst.insert(3);
+        bst.printTree();
+        bst.insert(5);
+        //test method contains
+        boolean isContains = bst.contains(14);
+        System.out.println("contains element: " + isContains);
+        System.out.println("min element in tree: " + bst.findMin());
+        System.out.println("max element in tree: " + bst.findMaxByWhile(bst.root));
     }
 
 }
