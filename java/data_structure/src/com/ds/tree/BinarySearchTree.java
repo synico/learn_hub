@@ -211,7 +211,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         boolean isContains = bst.contains(14);
         System.out.println("contains element: " + isContains);
         System.out.println("min element in tree: " + bst.findMin());
-        System.out.println("max element in tree: " + bst.findMaxByWhile(bst.root));
+        System.out.println("max element in tree: " + bst.findMax());
     }
 
 }
