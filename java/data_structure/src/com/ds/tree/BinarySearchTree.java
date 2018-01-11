@@ -207,11 +207,13 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         bst.insert(3);
         bst.printTree();
         bst.insert(5);
+        bst.remove(6);//remove root
         //test method contains
         boolean isContains = bst.contains(14);
         System.out.println("contains element: " + isContains);
         System.out.println("min element in tree: " + bst.findMin());
         System.out.println("max element in tree: " + bst.findMax());
+        System.out.println("----------------------");
     }
 
 }
