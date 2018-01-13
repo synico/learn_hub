@@ -1,6 +1,7 @@
 package com.zk.c5;
 
 import static com.zk.App.ZK_HOST;
+import static com.zk.App.ZK_HOST2;
 import static com.zk.App.ZK_PORT;
 
 import java.util.concurrent.CountDownLatch;
@@ -15,7 +16,7 @@ public class ConstructorUsageSimple implements Watcher {
 	private static CountDownLatch connectedSemaphore = new CountDownLatch(1);
 
 	public static void main(String[] args) throws Exception {
-		ZooKeeper zk = new ZooKeeper(ZK_HOST + ":" + ZK_PORT, 5000, new ConstructorUsageSimple());
+		ZooKeeper zk = new ZooKeeper(ZK_HOST2 + ":" + ZK_PORT, 5000, new ConstructorUsageSimple());
 		System.out.println("State: " + zk.getState());
 		try {
 			connectedSemaphore.await();

@@ -11,6 +11,8 @@ public interface App
 {
 	public static final String ZK_HOST = "172.25.73.176";
 	
+	public static final String ZK_HOST2 = "192.168.31.108";
+	
 	public final static String ZK_PORT = "2181";
 	
 	default void println(String msg) {
