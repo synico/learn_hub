@@ -6,14 +6,28 @@ public class MedianTwoSortedArrays {
         int len1 = nums1.length;
         int len2 = nums2.length;
         
-        if(len1 == 0 || len2 ==0) {
-            //binary search
-        } 
         int[] nums = new int[len1 + len2];
-        int i1 = 0, i2 =0;
-        while(i1 < len1 || i2 < len2) {
+        int i1 = 0, i2 =0, i = 0;
+        while(i < nums.length) {
+            int av1 = (i1 < len1) ? nums1[i1] : nums1[len1 - 1];
+            int av2 = (i2 < len2) ? nums2[i2] : nums2[len2 - 1];
             
+            if(av1 < av2) {
+                nums[i] = av1;
+                i1++;
+            } else if(av1 > av2) {
+                nums[i] = av2;
+                i2++;
+            } else {
+                nums[i] = av1;
+                i1++;
+                i++;
+                nums[i] = av2;
+                i2++;
+            }                
+            i++;
         }
+        //binary search
         return 0.0;
     }
     
