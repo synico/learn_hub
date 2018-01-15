@@ -46,7 +46,7 @@ public class ReverseLinkedList {
         n4.next = null;
         
         ListNode node = rll.reverseList(head);
-        while(node.next != null) {
+        while(node != null) {
             System.out.println(node.val);
             node = node.next;
         }
