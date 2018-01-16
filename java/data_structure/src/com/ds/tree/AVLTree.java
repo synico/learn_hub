@@ -2,7 +2,7 @@ package com.ds.tree;
 
 public class AVLTree {
     
-    class AVLNode<T extends Comparable<?>> {
+    class AVLNode<T> {
         T element;
         AVLNode<T> left;
         AVLNode<T> right;
@@ -33,8 +33,68 @@ public class AVLTree {
             } else {
                 root.right = insert(val, root.right);
             }
+            root.height = root.height + 1;
         }
-        return root;
+        return balance(root);
+    }
+    
+    private <T> AVLNode<T> balance(AVLNode<T> node) {
+        if(node == null) {
+            return node;
+        }
+        int lrDiff = height(node.left) - height(node.right);
+        if(lrDiff > 1) {
+            if(height(node.left.left) >= height(node.left.right)) {
+                node = rotateWithLeftChild(node);
+            } else {
+                doubleWithLeftChild(node);
+            }
+        }
+        int rlDiff = height(node.right) - height(node.left);
+        if(rlDiff > 1) {
+            if(height(node.right.right) >= height(node.right.left)) {
+                node = rotateWithRightChild(node);
+            } else {
+                doubleWithRightChild(node);
+            }
+        }
+        return node;
+    }
+    
+    //TURN LEFT
+    private <T> AVLNode<T> rotateWithRightChild(AVLNode<T> node) {
+        AVLNode<T> rightChild = node.right;
+        node.right = rightChild.left;
+        rightChild.left = node;
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
+        rightChild.height = Math.max(height(node), height(rightChild.right)) + 1;
+        return rightChild;
+    }
+    
+    //TURN RIGHT
+    private <T> AVLNode<T> rotateWithLeftChild(AVLNode<T> node) {
+        AVLNode<T> leftChild = node.left;
+        node.left = leftChild.right;
+        leftChild.right = node;
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
+        leftChild.height = Math.max(height(leftChild.left), height(node)) + 1;
+        return leftChild;
+    }
+    
+    //TRUN RIGTH, THEN TURN LEFT
+    private <T> AVLNode<T> doubleWithLeftChild(AVLNode<T> node) {
+        node.left = rotateWithRightChild(node.left);
+        return rotateWithLeftChild(node);
+    }
+    
+    //TURN LEFT, THEN TURN RIGHT
+    private <T> AVLNode<T> doubleWithRightChild(AVLNode<T> node) {
+        node.right = rotateWithLeftChild(node.right);
+        return rotateWithRightChild(node);
+    }
+    
+    private <T> int height(AVLNode<T> node) {
+        return node == null ? -1 : node.height;
     }
     
     private <T> int myCompareTo(T lv, T rv) {
@@ -44,9 +104,14 @@ public class AVLTree {
 
     public static void main(String[] args) {
         AVLTree avlTree = new AVLTree();
-        AVLNode<Integer> root = avlTree.insert(1, null);
-        avlTree.insert(2, root);
-        System.out.println(avlTree);
+        AVLNode<Integer> root = avlTree.insert(3, null);
+        root = avlTree.insert(2, root);
+        root = avlTree.insert(1, root);
+        root = avlTree.insert(4, root);
+        root = avlTree.insert(5, root);
+        root = avlTree.insert(6, root);
+        root = avlTree.insert(7, root);
+        System.out.println("new root: " + root);
     }
 
 }
