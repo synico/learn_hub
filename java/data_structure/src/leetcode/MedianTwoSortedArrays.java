@@ -139,6 +139,10 @@ public class MedianTwoSortedArrays {
         }
         return rst;
     }
+    
+    public static double findMedianSortedArrays2(int[] nums1, int[] nums2) {
+        return 0.0;
+    }
 
     public static void main(String[] args) {
         int [] nums1 = {2};

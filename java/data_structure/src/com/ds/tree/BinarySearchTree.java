@@ -1,11 +1,12 @@
 package com.ds.tree;
 
 import java.util.Comparator;
+import java.util.Stack;
 
 @SuppressWarnings("all")
 public class BinarySearchTree<T extends Comparable<? super T>> {
 
-    private static class BinaryNode<E> {
+    public static class BinaryNode<E> {
 
         E element;
 
@@ -25,6 +26,18 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         
         public String toString() {
             return "" + element;
+        }
+        
+        public E getElement() {
+            return element;
+        }
+        
+        public BinaryNode<E> getLeftNode() {
+            return this.left;
+        }
+        
+        public BinaryNode<E> getRightNode() {
+            return this.right;
         }
     }
 
@@ -72,8 +85,8 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         root = remove(x, root);
     }
 
-    public void printTree() {
-        printTree(root);
+    public BinaryNode<T> getRoot() {
+        return root;
     }
     
     private int myCompare(T lhs, T rhs) {
@@ -184,17 +197,57 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
 
         return t;
     }
+    
+    public void printTree() {
+        inOrderTraversal(root);
+    }
 
-    private void printTree(BinaryNode<T> t) {
+    
+    //preorder-recursive
+    private void preorderPrint(BinaryNode<T> t) {
         if(t != null) {
-            System.out.println("Node: " + t.element);
+            System.out.println("Node: " + t.element);//1st: node
             if(t.left != null) {
-                printTree(t.left);
+                preorderPrint(t.left);//2nd: left
             }
             if(t.right != null) {
-                printTree(t.right);
+                preorderPrint(t.right);//3rd: right
             }
         }
+    }
+    
+    //preorder-non-recursive
+    private void preOrderTraversal(BinaryNode<T> t) {
+        Stack<BinaryNode> stack = new Stack<BinaryNode>();
+        while(t != null || stack.size() > 0) {
+            if(t != null) {
+                System.out.println("Node: " + t.element);
+                stack.push(t);
+                t = t.left;
+            } else {
+                t = stack.pop();
+                t = t.right;
+                
+            }
+        }
+    }
+    
+    private void inOrderTraversal(BinaryNode<T> t) {
+        Stack<BinaryNode> stack = new Stack<BinaryNode>();
+        while(t != null || stack.size() > 0) {
+            if(t != null) {
+                stack.push(t);
+                t = t.left;
+            } else {
+                t = stack.pop();
+                System.out.println("Node: " + t.element);
+                t = t.right;
+            }
+        }
+    }
+    
+    private void postOrderTraversal(BinaryNode<T> t) {
+        Stack<BinaryNode> stack = new Stack<BinaryNode>();
     }
 
     public static void main(String[] args) {
