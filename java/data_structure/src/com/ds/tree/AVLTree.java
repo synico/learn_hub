@@ -1,5 +1,8 @@
 package com.ds.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class AVLTree {
     
     class AVLNode<T> {
@@ -101,7 +104,38 @@ public class AVLTree {
     private <T> int myCompareTo(T lv, T rv) {
         return ((Comparable<T>)lv).compareTo(rv);
     }
-
+    
+    public <T> void printTree(AVLNode<T> root) {
+        levelOrderTraversal(root);
+    }
+    
+    private <T> void levelOrderTraversal(AVLNode<T> t) {
+        Queue<AVLNode<T>> queue = new LinkedList<AVLNode<T>>();
+        Queue<AVLNode<T>> swap = new LinkedList<AVLNode<T>>();
+        queue.offer(t);
+        while(t != null || queue.size() > 0) {
+            if(queue.size() > 0) {
+                while(queue.size() > 0) {
+                    AVLNode<T> bn = queue.poll();
+                    if(bn.left != null) {
+                        swap.offer(bn.left);
+                    } 
+                    if(bn.right != null) {
+                        swap.offer(bn.right);
+                    }
+                    System.out.print("Node: " + bn.element + " || ");
+                }
+                System.out.println();
+                System.out.println("---------------------------------");
+            } else {
+                if(swap.size() > 0) {
+                    while(swap.size() > 0) {
+                        queue.offer(swap.poll());
+                    }
+                }
+            }
+        }
+    }
 
     public static void main(String[] args) {
         AVLTree avlTree = new AVLTree();
@@ -112,7 +146,7 @@ public class AVLTree {
         root = avlTree.insert(5, root);
         root = avlTree.insert(6, root);
         root = avlTree.insert(7, root);
-        System.out.println("new root: " + root);
+        avlTree.printTree(root);
     }
 
 }

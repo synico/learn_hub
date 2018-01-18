@@ -1,6 +1,8 @@
 package com.ds.tree;
 
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 @SuppressWarnings("all")
@@ -199,7 +201,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
     }
     
     public void printTree() {
-        inOrderTraversal(root);
+        levelOrderTraversal(root);
     }
 
     
@@ -248,6 +250,34 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
     
     private void postOrderTraversal(BinaryNode<T> t) {
         Stack<BinaryNode> stack = new Stack<BinaryNode>();
+    }
+    
+    private void levelOrderTraversal(BinaryNode<T> t) {
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        Queue<BinaryNode> swap = new LinkedList<BinaryNode>();
+        queue.offer(t);
+        while(t != null || queue.size() > 0) {
+            if(queue.size() > 0) {
+                while(queue.size() > 0) {
+                    BinaryNode bn = queue.poll();
+                    if(bn.left != null) {
+                        swap.offer(bn.left);
+                    } 
+                    if(bn.right != null) {
+                        swap.offer(bn.right);
+                    }
+                    System.out.print("Node: " + bn.element + " || ");
+                }
+                System.out.println();
+                System.out.println("---------------------------------");
+            } else {
+                if(swap.size() > 0) {
+                    while(swap.size() > 0) {
+                        queue.offer(swap.poll());
+                    }
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
