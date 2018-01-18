@@ -97,6 +97,7 @@ public class AVLTree {
         return node == null ? -1 : node.height;
     }
     
+    @SuppressWarnings("all")
     private <T> int myCompareTo(T lv, T rv) {
         return ((Comparable<T>)lv).compareTo(rv);
     }
