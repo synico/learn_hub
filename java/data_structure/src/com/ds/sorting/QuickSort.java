@@ -18,27 +18,34 @@ public class QuickSort {
     }
     
     public static void quicksort(int [] a) {
-        quicksort(a, 0, a.length - 1);
+        if(a.length <= 1) {
+            return;
+        } else {
+            quicksort(a, 0, a.length - 1);
+        }
     }
     
-    private static void quicksort(int [] a, int left, int right) {
-        int pivot = median3(a, left, right);
-        //Begin partitioning
-        int i = left, j = right - 1;
-        for(;;) {
-            while(a[++i] < pivot) {}
-            while(a[--j] > pivot) {}
-            if(i < j) {
-                swapReferences(a, i, j);
-            } else {
-                break;
+    private static int partition(int [] a, int low, int high) {
+        int pivot = a[low];
+        while(low < high) {
+            while(low < high && a[high] >= pivot) {
+                --high;
+                swapReferences(a, low, high);
+            }
+            while(low < high && a[low] <= pivot) {
+                ++low;
+                swapReferences(a, high, low);
             }
         }
-        
-        swapReferences(a, i, right - 1);
-        
-        quicksort(a, left, i - 1);
-        quicksort(a, i + 1, right);
+        return low;
+    }
+    
+    private static void quicksort(int [] a, int low, int high) {
+        if(low < high) {
+            int pivotloc = partition(a, low, high);
+            quicksort(a, low, pivotloc - 1);
+            quicksort(a, pivotloc + 1, high);
+        }
     }
     
     private static int median3(int [] a, int left, int right) {
