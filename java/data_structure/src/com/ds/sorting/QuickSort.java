@@ -26,23 +26,24 @@ public class QuickSort {
     }
     
     private static int partition(int [] a, int low, int high) {
-        int pivot = a[low];
+        int pivot = low;
         while(low < high) {
-            while(low < high && a[high] >= pivot) {
-                --high;
-                swapReferences(a, low, high);
+            while(low < high && a[high] > a[pivot]) {
+                high--;
             }
-            while(low < high && a[low] <= pivot) {
-                ++low;
-                swapReferences(a, high, low);
+            while(low < high && a[++low] < a[pivot]) {
             }
+            swapReferences(a, low, high);
         }
+        swapReferences(a, pivot, low);
         return low;
     }
     
     private static void quicksort(int [] a, int low, int high) {
+        System.out.print("low: " + low + ", high: " + high);
         if(low < high) {
             int pivotloc = partition(a, low, high);
+            System.out.println(" , pivotloc: " + pivotloc);
             quicksort(a, low, pivotloc - 1);
             quicksort(a, pivotloc + 1, high);
         }
@@ -72,6 +73,7 @@ public class QuickSort {
     public static void main(String[] args) {
         int[] demo = {13, 81, 92, 43, 65, 31, 57, 26, 75, 0};
         int[] demo1 = {8, 1, 4, 9, 6, 3, 5, 2, 7, 0};
+        int[] demo2 = {2, 8, 7, 1, 3, 5, 6, 4};
         PrintUtil.printList(demo1);
         QuickSort.quicksort(demo1);
         PrintUtil.printList(demo1);
