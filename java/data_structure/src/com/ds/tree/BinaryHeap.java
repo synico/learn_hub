@@ -1,16 +1,28 @@
 package com.ds.tree;
 
-public class BinaryHeap<T extends Comparable<? super T>> {
+public class BinaryHeap {
     
-    private int currentSize;
-    private T [] array;
+    private static final int INIT_CAPACITY = 10;
     
-    public BinaryHeap() {}
+    private int currentSize = 0;
+    private int [] array;
     
-    public BinaryHeap(int capacity) {}
+    public BinaryHeap() {
+        array = new int[INIT_CAPACITY];
+        currentSize = array.length;
+    }
     
-    public BinaryHeap(T [] items) {
-        this.array = items;
+    public BinaryHeap(int capacity) {
+        array = new int[capacity];
+        currentSize = array.length;
+    }
+    
+    public BinaryHeap(int [] items) {
+        this.array = new int[items.length + 1];
+        for(int i = 0; i < items.length; i++) {
+            array[i + 1] = items[i];
+        }
+        currentSize = array.length;
     }
     
     public boolean isEmpty() {
@@ -21,12 +33,21 @@ public class BinaryHeap<T extends Comparable<? super T>> {
         
     }
     
-    public boolean insert(T x) {
+    public boolean insert(int x) {
+        if(currentSize == array.length) {
+            enlargeArray(array.length * 2 + 1);
+        }
+        int hole = currentSize;
+        currentSize = currentSize + 1;
+        while(hole/2 > 0 && array[hole/2] > x) {
+            array[hole] = array[hole/2];
+        }
+        array[hole] = x;
         return true;
     }
     
-    public T deleteMin() {
-        return null;
+    public int deleteMin() {
+        return 0;
     }
     
     private void precolateDown(int hole) {
@@ -42,11 +63,27 @@ public class BinaryHeap<T extends Comparable<? super T>> {
     }
     
     private boolean enlargeArray(int newSize) {
+        int [] temp = new int[newSize];
+        for(int i = 1; i < array.length; i++) {
+            temp[i] = array[i];
+        }
+        this.array = temp;
         return true;
+    }
+    
+    public void printBinaryHeap() {
+        for(int i : array) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
-
+        int [] initHeap = {13, 21, 16, 24, 31, 19, 68, 65, 26, 32};
+        BinaryHeap bh = new BinaryHeap(initHeap);
+        bh.printBinaryHeap();
+        bh.insert(14);
+        bh.printBinaryHeap();
     }
 
 }
