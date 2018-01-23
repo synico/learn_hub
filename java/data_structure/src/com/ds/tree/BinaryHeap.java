@@ -39,8 +39,9 @@ public class BinaryHeap {
         }
         int hole = currentSize;
         currentSize = currentSize + 1;
-        while(hole/2 > 0 && array[hole/2] > x) {
+        while(hole/2 > 1 && array[hole/2] > x) {
             array[hole] = array[hole/2];
+            hole = hole/2;
         }
         array[hole] = x;
         return true;
