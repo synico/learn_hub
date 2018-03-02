@@ -6,7 +6,13 @@ public class NutritionFacts {
 //    private final int servings;
     
     private NutritionFacts() {
-        
+        Facets facets = new Facets();
+    }
+    
+    private class Facets {
+        public Facets() {
+            
+        }
     }
     
 }
