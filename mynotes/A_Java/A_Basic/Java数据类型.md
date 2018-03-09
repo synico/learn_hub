@@ -8,3 +8,7 @@ short|16|-2的15次方|2的15次方-1
 char|16
 byte|8|-128|127
 boolean|1
+
+1MB = 1024KB
+1KB = 1024B
+1Byte = 8bit
