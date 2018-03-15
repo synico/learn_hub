@@ -34,13 +34,28 @@ services:
       ZOO_MY_ID: 3
       ZOO_SERVERS: server.1=zk1:2888:3888 server.2=zk2:2888:3888 server.3:zk3:2888:3888
 
-  kafka:
+  broker1:
     image: wurstmeister/kafka:1.0.0
     ports:
-      - 9092:9092
+      - 9011:9092
     container_name: broker1
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 192.168.31.124
+      KAFKA_BROKER_ID: 1
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.1.219
+      KAFKA_ZOOKEEPER_CONNECT: zk1:2181,zk2:2181,zk3:2181
+      KAFKA_MESSAGE_MAX_BYTES: 2000000
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  broker2:
+    image: wurstmeister/kafka:1.0.0
+    ports:
+      - 9012:9092
+    container_name: broker2
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.1.219
       KAFKA_ZOOKEEPER_CONNECT: zk1:2181,zk2:2181,zk3:2181
       KAFKA_MESSAGE_MAX_BYTES: 2000000
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
