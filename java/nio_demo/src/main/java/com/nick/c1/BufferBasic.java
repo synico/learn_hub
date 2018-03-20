@@ -8,6 +8,8 @@ public class BufferBasic {
         ByteBuffer byteBuffer = ByteBuffer.allocate(10);
         byteBuffer.put((byte)'H').put((byte)'e');
         System.out.println(byteBuffer.position());
+        byte b1st = byteBuffer.get(1);
+        System.out.println("Data in 1st byte: " + (char)b1st);
     }
     
     
