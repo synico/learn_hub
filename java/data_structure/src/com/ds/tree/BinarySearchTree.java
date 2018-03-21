@@ -256,7 +256,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
         Queue<BinaryNode> swap = new LinkedList<BinaryNode>();
         queue.offer(t);
-        while(t != null || queue.size() > 0) {
+        while(swap.size() > 0 || queue.size() > 0) {
             if(queue.size() > 0) {
                 while(queue.size() > 0) {
                     BinaryNode bn = queue.poll();
@@ -288,10 +288,11 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         bst.insert(1);
         bst.insert(4);
         bst.insert(3);
-        bst.printTree();
+//        bst.printTree();
         bst.insert(5);
         bst.remove(6);//remove root
         //test method contains
+        bst.levelOrderTraversal(bst.getRoot());
         boolean isContains = bst.contains(14);
         System.out.println("contains element: " + isContains);
         System.out.println("min element in tree: " + bst.findMin());
