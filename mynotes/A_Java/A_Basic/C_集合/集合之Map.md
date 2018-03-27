@@ -16,6 +16,7 @@
 ##### JDK8
 * 通过覆写HashMap的newNode方法实现put元素时，创建扩展自HashMap.Node的LinkedHashMap.Entry。LinkedHashMap.Entry中存储了节点的hash值，key，value以及其前后节点的引用。
 * LinkedHashMap同时持有头节点head和尾节点tail。
+* LinkedHashMap可用来实现LRU缓存，但需要复写removeEldestEntry方法。定义在LinkedHashMap中的put或putAll方法会在加入新元素后调用afterNodeInsertion方法，而afterNodeInsertion方法会调用removeEldestEntry方法检查是否需要移除当前头结点。
 ***
 
 #### WeakHashMap
