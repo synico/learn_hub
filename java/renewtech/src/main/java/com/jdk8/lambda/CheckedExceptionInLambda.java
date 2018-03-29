@@ -7,6 +7,19 @@ import java.util.stream.Stream;
 
 public class CheckedExceptionInLambda {
     
+    private final int instanceVar = 10;
+    
+    public CheckedExceptionInLambda() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                foo();
+                System.out.println(instanceVar);
+            }
+            
+        }).start();
+    }
+    
     public void foo() {
         Stream.of("a", "b").forEach(s -> {
             try {
@@ -21,7 +34,7 @@ public class CheckedExceptionInLambda {
 
     public static void main(String[] args) {
         CheckedExceptionInLambda cel = new CheckedExceptionInLambda();
-        cel.foo();
+//        cel.foo();
     }
 
 }

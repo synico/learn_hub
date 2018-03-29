@@ -14,6 +14,7 @@
 #### LinkedHashMap
 ##### JDK7
 ##### JDK8
+* 使用一个双向链表存储Map中的Entry顺序关系，包括LRU顺序和插入顺序 (构造函数参数accessOrder的值，true表示访问顺序，false表示按插入顺序)。
 * 通过覆写HashMap的newNode方法实现put元素时，创建扩展自HashMap.Node的LinkedHashMap.Entry。LinkedHashMap.Entry中存储了节点的hash值，key，value以及其前后节点的引用。
 * LinkedHashMap同时持有头节点head和尾节点tail。
 * LinkedHashMap可用来实现LRU缓存，但需要复写removeEldestEntry方法。定义在LinkedHashMap中的put或putAll方法会在加入新元素后调用afterNodeInsertion方法，而afterNodeInsertion方法会调用removeEldestEntry方法检查是否需要移除当前头结点。
