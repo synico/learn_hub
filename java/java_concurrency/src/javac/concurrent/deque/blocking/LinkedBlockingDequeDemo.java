@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LinkedBlockingDequeDemo {
 
-    private BlockingDeque<String> lbDeque = new LinkedBlockingDeque<String>();
+    private BlockingDeque<String> lbDeque = new LinkedBlockingDeque<String>(50);
 
     class Consumer1 implements Runnable {
 
@@ -52,6 +52,7 @@ public class LinkedBlockingDequeDemo {
                 for (int i = 0; i < 1000; i++) {
                     // TimeUnit.MILLISECONDS.sleep(1);
                     lbDeque.put("test: " + i);
+                    System.out.println("Producer put element \"test:" + i + " to BlockingDeque");
                 }
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
@@ -67,9 +68,8 @@ public class LinkedBlockingDequeDemo {
         new Thread(producer).start();
 
         try {
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

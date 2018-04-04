@@ -147,3 +147,4 @@ BlockingQUeue的方法以四种形式出现，对于不能立即满足但可能�
 ***
 #### ConcurrentLinkedDeque
 #### LinkedBlockingDeque
+LinkedBlockingDeque是可选容量的阻塞队列，如果没有设置容量，那么容量是Integer.MAX_VALUE。
