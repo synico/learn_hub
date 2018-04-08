@@ -290,6 +290,24 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
             }
         }
     }
+    
+    private void levelOrderPrint() {
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            BinaryNode<T> node = queue.poll();
+            BinaryNode<T> leftNode = node.getLeftNode();
+            BinaryNode<T> rightNode = node.getRightNode();
+            if(leftNode != null) {
+                queue.offer(leftNode);
+            }
+            if(rightNode != null) {
+                queue.offer(rightNode);
+            }
+            System.out.println("Node: " + node.getElement());
+        }
+        
+    }
 
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
@@ -303,13 +321,14 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         bst.insert(5);
 //        bst.remove(6);//remove root
         //test method contains
-//        bst.levelOrderTraversal(bst.getRoot());
-        bst.postorderPrint(bst.getRoot());
+        bst.levelOrderTraversal(bst.getRoot());
+//        bst.postorderPrint(bst.getRoot());
         boolean isContains = bst.contains(14);
         System.out.println("contains element: " + isContains);
         System.out.println("min element in tree: " + bst.findMin());
         System.out.println("max element in tree: " + bst.findMax());
         System.out.println("----------------------");
+        bst.levelOrderPrint();
     }
 
 }
