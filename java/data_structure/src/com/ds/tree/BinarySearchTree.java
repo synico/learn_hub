@@ -218,6 +218,17 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         }
     }
     
+    //postorder-recursive
+    private void postorderPrint(BinaryNode<T> t) {
+        if(t != null) {
+            if(t.left != null)
+                postorderPrint(t.left);
+            if(t.right != null)
+                postorderPrint(t.right);
+            System.out.println("Node: " + t.element);
+        }
+    }
+    
     //preorder-non-recursive
     private void preOrderTraversal(BinaryNode<T> t) {
         Stack<BinaryNode> stack = new Stack<BinaryNode>();
@@ -290,9 +301,10 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         bst.insert(3);
 //        bst.printTree();
         bst.insert(5);
-        bst.remove(6);//remove root
+//        bst.remove(6);//remove root
         //test method contains
-        bst.levelOrderTraversal(bst.getRoot());
+//        bst.levelOrderTraversal(bst.getRoot());
+        bst.postorderPrint(bst.getRoot());
         boolean isContains = bst.contains(14);
         System.out.println("contains element: " + isContains);
         System.out.println("min element in tree: " + bst.findMin());
