@@ -1,21 +1,39 @@
-
 public class StringPermutation {
+    
+    private static int idx = 0;
     
     public static void permutationString(String input) {
         if(input == null || input.trim().length() == 0) {
             return;
         }
-//        permutation(input.toCharArray());
+        permutation(input.toCharArray(), 0, input.length() - 1);
     }
     
-    public static void permutation(char [] input, int start) {
-        for(int i = 0;i < input.length; i++) {
-            //TODO
+    private static void permutation(char[] s, int from, int to) {
+        if(to <= 1) {
+            return;
         }
+        if(from == to) {
+            System.out.print(idx + " | ");
+            System.out.println(s);
+            idx++;
+        } else {
+            for(int i = from; i <= to; i++) {
+                swap(s, i, from);
+                permutation(s, from + 1, to);
+                swap(s, from, i);
+            }
+        }
+    }
+    
+    private static void swap(char[] s, int from, int to) {
+        char temp = s[from];
+        s[from] = s[to];
+        s[to] = temp;
     }
 
     public static void main(String[] args) {
-        StringPermutation.permutationString("abc");
+        StringPermutation.permutationString("abcd");
     }
 
 }
