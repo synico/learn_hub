@@ -5,10 +5,10 @@ public class StringPermutation {
         if(input == null || input.trim().length() == 0) {
             return;
         }
-        permutation(input.toCharArray());
+//        permutation(input.toCharArray());
     }
     
-    public static void permutation(char [] input) {
+    public static void permutation(char [] input, int start) {
         for(int i = 0;i < input.length; i++) {
             //TODO
         }
