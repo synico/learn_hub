@@ -2,14 +2,14 @@ public class StringPermutation {
     
     private static int idx = 0;
     
-    public static void permutationString(String input) {
+    public void permutationString(String input) {
         if(input == null || input.trim().length() == 0) {
             return;
         }
         permutation(input.toCharArray(), 0, input.length() - 1);
     }
     
-    private static void permutation(char[] s, int from, int to) {
+    private void permutation(char[] s, int from, int to) {
         if(to <= 1) {
             return;
         }
@@ -26,14 +26,15 @@ public class StringPermutation {
         }
     }
     
-    private static void swap(char[] s, int from, int to) {
+    private void swap(char[] s, int from, int to) {
         char temp = s[from];
         s[from] = s[to];
         s[to] = temp;
     }
 
     public static void main(String[] args) {
-        StringPermutation.permutationString("abcd");
+        StringPermutation sp = new StringPermutation();
+        sp.permutationString("abcd");
     }
 
 }
