@@ -10,6 +10,7 @@
   	<module>eureka_server</module>
     <module>eureka_service</module>
     <module>ribbon_consumer</module>
+    <module>hystrix_circuit_breaker</module>
   </modules>
     
   <properties>

@@ -7,18 +7,22 @@
     <artifactId>springcloud_demo</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>eureka_service</artifactId>
-  <name>eureka_service</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  
+  <artifactId>hystrix_circuit_breaker</artifactId>
+  <name>hystrix_circuit_breaker</name>
   
   <dependencies>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-hystrix</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-ribbon</artifactId>
+    </dependency>
     <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-eureka</artifactId>
     </dependency>
   </dependencies>
-  
 </project>
