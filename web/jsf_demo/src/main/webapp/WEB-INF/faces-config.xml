@@ -4,6 +4,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
+    
+    <navigation-rule>
+        <from-view-id>/page1.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/page2.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/page3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
 	<!-- <managed-bean>
 		<managed-bean-name>someBean</managed-bean-name>
 		<managed-bean-class>com.nick.mbean.SomeBean</managed-bean-class>
