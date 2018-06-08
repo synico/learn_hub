@@ -1,5 +1,7 @@
 package com.nick.mbean;
 
+import java.util.Date;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -10,9 +12,9 @@ public class UserBean {
     private String firstName;
     private String lastName;
     private String sex;
-    private String bod;
+    private Date dob;
     private String email;
-    private String serviceLevel;
+    private String serviceLevel = "medium";
 
     public String getFirstName() {
         return firstName;
@@ -38,12 +40,12 @@ public class UserBean {
         this.sex = sex;
     }
 
-    public String getBod() {
-        return bod;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setBod(String bod) {
-        this.bod = bod;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 
     public String getEmail() {
