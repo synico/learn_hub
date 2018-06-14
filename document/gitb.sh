@@ -7,9 +7,7 @@ do
   if [ -d $sub ]
   then
     echo $sub
-    cd $sub
-    git $1 $2 "$3"
-    cd ..
+    git -C $PWD/$sub $1 $2 "$3"
     echo "------------------------------------------"
   fi
 done
